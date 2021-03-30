@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos index{% endblock %}
+  {% block stylesheets %}
+      <style>
+          img{
+              width: 100px;
+              heigth: 1000px;
+          }</style>
+  {% endblock %}
+{% block body %}
+    <h1>Productos index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fecha</th>
+                <th>Cod_referencia</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Peso</th>
+                <th>Descripcion</th>
+                <th>Ean</th>
+                <th>Imagen</th>
+                <th>Stock</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producto in productos %}
+            <tr>
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.fecha ? producto.fecha|date('Y-m-d') : '' }}</td>
+                <td>{{ producto.codReferencia }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.peso }}</td>
+                <td>{{ producto.descripcion }}</td>
+                <td>{{ producto.ean }}</td>
+                <td><img src="/uploads/productos/{{ producto.imagen }}"></td>
+                <td>{{ producto.stock }}</td>
+                <td>
+                    <a href="{{ path('productos_show', {'id': producto.id}) }}">show</a>
+                    <a href="{{ path('productos_edit', {'id': producto.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('productos_new') }}">Create new</a>
+{% endblock %}

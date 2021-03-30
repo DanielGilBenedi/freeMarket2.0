@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Marcas index{% endblock %}
+
+{% block body %}
+    <h1>Marcas index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Imagen</th>
+                <th>Fecha</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for marca in marcas %}
+            <tr>
+                <td>{{ marca.id }}</td>
+                <td>{{ marca.nombre }}</td>
+                <td>{{ marca.descripcion }}</td>
+                <td><img src="/uploads/marcas/{{ marca.imagen }}"></td>
+                <td>{{ marca.fecha ? marca.fecha|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('marcas_show', {'id': marca.id}) }}">show</a>
+                    <a href="{{ path('marcas_edit', {'id': marca.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('marcas_new') }}">Create new</a>
+{% endblock %}
