@@ -3,12 +3,19 @@
 
 namespace App\Controller;
 //use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
+use App\Entity\Categorias;
+use App\Entity\Marcas;
+use App\Entity\Productos;
+use App\Form\MasiveImportType;
 
-class ImportCSVController
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+
+
+class ImportCSVController extends AbstractController
 {
     // change these options about the file to read
   /*  private $csvParsingOptions = array(
@@ -17,39 +24,92 @@ class ImportCSVController
         'ignoreFirstLine' => true
     );*/
 
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-        // use the parseCSV() function
-        $csv = $this->parseCSV();
-    }
 
     /**
-     * Parse a csv file
-     *
-     * @return array
+     * @Route("/carga_masiva", name="carga_masiva", methods={"GET","POST"})
      */
-    private function parseCSV()
-    {
-    /*    $ignoreFirstLine = $this->csvParsingOptions['ignoreFirstLine'];
+    public function cargaMasiva(Request $request){
+        $producto = new Productos();
+        $categoria = new Categorias();
+        $form = $this->createForm(MasiveImportType::class);
+        $form->handleRequest($request);
 
-        $finder = new Finder();
-        $finder->files()
-            ->in($this->csvParsingOptions['finder_in'])
-            ->name($this->csvParsingOptions['finder_name'])
-        ;
-        foreach ($finder as $file) { $csv = $file; }
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $uploadedFile */
+            $uploadedFile = $form['fichero']->getData();
 
-        $rows = array();
-        if (($handle = fopen($csv->getRealPath(), "r")) !== FALSE) {
-            $i = 0;
-            while (($data = fgetcsv($handle, null, ";")) !== FALSE) {
-                $i++;
-                if ($ignoreFirstLine && $i == 1) { continue; }
-                $rows[] = $data;
+            if ($uploadedFile) {
+                $destination = $this->getParameter('kernel.project_dir') . '/public/uploads/CSV';
+                $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_BASENAME);
+
+                $uploadedFile->move(
+                    $destination,
+                    $originalFilename
+                );
+
+                $array = Array();
+                $fp = fopen ($destination.'/'.$originalFilename,"r");
+                $count = 0;
+                while ($data = fgetcsv ($fp, 1000, ",")) {
+                    $count++;
+                    if($count==1){
+                        continue;
+                    }else{
+                        array_push($array,$data);
+                    }
+
+                }
+                fclose ($fp);
+
+                for($i = 0; $i < count($array); $i++){
+                    $entityManager = $this->getDoctrine()->getManager();
+                    $cate = $entityManager->getRepository(Categorias::class)->findOneBy(['nombre' => $array[$i][4]]);
+                    $mar = $entityManager->getRepository(Marcas::class)->findOneBy(['nombre' => $array[$i][3]]);
+                    $prod = $entityManager->getRepository(Productos::class)->findOneBy(['ean' => $array[$i][5]]);
+                    if(isset($prod)){
+                        continue;
+                    }else{
+                        $producto->setFecha(new \DateTime("now"));
+                        $producto->setCodReferencia('1234');
+                        $producto->setNombre($array[$i][1]);
+                        $producto->setUrl($array[$i][0]);
+                        $producto->setTitulo($array[$i][1]);
+                        $producto->setDescripcion($array[$i][2]);
+                        $producto->setIdMarca($mar);
+                        $producto->setIdCategoria($cate);
+                        $producto->setEan($array[$i][5]);
+                        $producto->setPeso($array[$i][6]);
+                        $producto->setStock($array[$i][7]);
+                        $producto->setPrecio($array[$i][8]);
+                        $producto->setImagen($array[$i][9]);
+
+
+
+                        $entityManager->persist($producto);
+                        $entityManager->flush();
+                        $entityManager->clear();
+
+
+                    }
+
+                }
+
+                //Llamamos a Categorias para obtener el nombre----queda hacer la relación con los campos para
+                //subirlos a la base de datos con el ID referenciado
+
+                //dump($product);
+
+
+
+                $fileSystem = new Filesystem();
+                $fileSystem->remove($destination.'/'.$originalFilename);
+                dump($array);
             }
-            fclose($handle);
-        }
 
-        return $rows;*/
+        }
+        return $this->render('productos/carga_masiva.html.twig', [
+                'form' => $form->createView(),
+
+        ]);
     }
 }

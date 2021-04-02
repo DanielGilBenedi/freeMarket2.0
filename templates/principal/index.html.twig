@@ -1,14 +1,382 @@
 
 {% include 'navbar.html.twig' %}
-{% block title %}Principal{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+        .mySlides {display:none}
+        .w3-left, .w3-right, .w3-badge {cursor:pointer}
+        .w3-badge {height:13px;width:13px;padding:0}
+        .w3-display-container{
+            width: 100%;
+            margin-top: 0px;
+        }
+
+
+        .mySlides{
+            width: 980px;
+        }
+
+        /*SLIDER DE LOS PRODUCTOS*/
+
+        .product-slider{
+            margin-top: 100px;
+        }
+
+        .swiper-container {
+            width: 90%;
+            height: 60%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .slider-box{
+
+            height:100%;
+            width:100%;
+            position:relative;
+            background-color:#FFFFFF;
+            border-radius:5px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            border:1px solid rgba(187,187,187,0.40);
+        }
+        .slider-box a{
+            text-decoration:none;
+            text-align:center;}
+        .img-box{
+            height:170px;
+        }
+        .img-box img{
+            height:auto;
+            max-width:100%;
+            max-height:100%;}
+        .time{
+            position:absolute;
+            top:0px;
+            right:20px;
+            color:#FF0000;}
+        .detail{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            box-sizing:border-box;
+            font-size:13px;
+            line-height:35px;}
+        .price{
+            color:#FF0000;
+            line-height:20px;}
+        .cart{
+            position:absolute;
+            bottom:0px;
+            height:45px;
+            background-color:#FF0000;
+            width:100%;
+            display:flex;
+            justify-content:center;
+            align-items:center;}
+        .cart a{
+            color:#FFFFFF;
+            font-family: 'Unica One', cursive;}
+
+        .slider-box:hover{
+            box-shadow:2px 2px 12px rgba(47,47,47,0.40);
+        }
+        .slider-box:hover .img-box img{
+            transform:scale(1.07);
+            transition:all ease 0.3s;}
+        .cart:hover{
+            transform:scale(1.1);
+
+            box-shadow:2px 2px 12px rgba(47,47,47,0.40);
+            transition:all ease 0.1s;}
+        @media only screen and (max-width: 768px) {
+            .swiper-container {
+                height: 400px;
+            }
+        }
+
+        .contenido-empresa{
+            margin-top: 100px;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
 
 {% block body %}
 
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="/slider/slider1.jpg">
+        <img class="mySlides" src="/slider/slider_fagor.jpg">
+        <img class="mySlides" src="/slider/slider_varta.jpg">
+        <div class="w3-center w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
+            <span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>
+            <span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>
+            <span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>
+        </div>
+    </div>
 
-  <p>HOLA</p>
 
+    <div class="contenido-empresa">
+        <h2>EMPRESA</h2>
+        <p>
+            Bienvenidos a Elektro3 S.C.C.L. una empresa dedicada a la importación, distribución y exportación de productos para ferreterías, tiendas de bricolaje, electrodomésticos y jardinería. Siempre apostando por la incorporación de nuevos productos, en Elektro3 estamos siempre comprometidos a dar un servicio eficiente, rápido y de calidad a todos nuestros clientes. Muchas gracias por vuestra confianza.
+
+            Fue creada a finales de 1993 en Cambrils (Tarragona) en un pequeño local de 200m2 por un grupo de profesionales con gran experiencia en el sector, con la intención de ofrecer al mercado un servicio eficiente, rápido y de calidad a todos sus clientes, siendo el mejor aval de la empresa los más de 22.500 clientes y los más de 25 años de experiencia en el sector.</p>
+    </div>
+
+
+    <!-- Slider -->
+    <div class="product-slider">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <div class="img-box">
+                        <img src="https://api.elektro3.com/images/products/02195.jpg">
+                    </div>
+
+                    <p class="detail">Tijeras profesionales electricista
+
+                        <a href="#" class="price">21.15 €</a>
+                    </p>
+                    <div class="cart">
+                        <a href="https://comaranda.com/products/ult-unidades-tijeras-profesionales-para-electricista?_pos=1&_sid=4640a9aa9&_ss=r">VER PRODUCTO</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--slide 2-------------------------------------->
+            <div class="swiper-slide">
+                <div class="slider-box">
+
+                    <div class="img-box">
+                        <img src="https://api.elektro3.com/images/products/08610.jpg">
+                    </div>
+
+                    <p class="detail">Caja fuerte reforzada
+
+                        <a href="#" class="price">89.25 €</a>
+                    </p>
+                    <div class="cart">
+                        <a href="https://comaranda.com/products/caja-fuerte-reforzada-20x195x305cm?_pos=1&_sid=b90c512e3&_ss=r">VER PRODUCTO</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--slide 3-------------------------------------->
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <div class="img-box">
+                        <img src="https://api.elektro3.com/images/products/08608.jpg">
+                    </div>
+
+                    <p class="detail">Caja-libro seguridad
+
+                        <a href="#" class="price">18.95 €</a>
+                    </p>
+                    <div class="cart">
+                        <a href="https://comaranda.com/products/caja-libro-seguridad?_pos=1&_sid=60bb19f2d&_ss=r">VER PRODUCTO</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--slide 4-------------------------------------->
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <div class="img-box">
+                        <img src="https://api.elektro3.com/images/products/99997.jpg">
+                    </div>
+
+                    <p class="detail">Carretilla metalica
+
+                        <a href="#" class="price">52.45 €</a>
+                    </p>
+                    <div class="cart">
+                        <a href="https://comaranda.com/products/carretilla-metalica-plegable-con-ruedas-max-150kg-82x48x73cm?_pos=3&_sid=bbd3fe413&_ss=r">VER PRODUCTO</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--slide 5-------------------------------------->
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <div class="img-box">
+                        <img src="https://api.elektro3.com/images/products/08382.jpg">
+                    </div>
+
+                    <p class="detail">Juego 4 piezas para desbaste
+
+                        <a href="#" class="price">16.5 €</a>
+                    </p>
+                    <div class="cart">
+                        <a href="https://comaranda.com/products/juego-4-piezas-para-desbaste?_pos=1&_sid=342c8b2f7&_ss=r">VER PRODUCTO</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--slide 6-------------------------------------->
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <div class="img-box">
+                        <img src="https://api.elektro3.com/images/products/08526.jpg">
+                    </div>
+
+                    <p class="detail">Juego de terrajas 20 piezas
+
+                        <a href="#" class="price">19.15 €</a>
+                    </p>
+                    <div class="cart">
+                        <a href="https://comaranda.com/products/juego-de-terrajas-20-piezas?_pos=1&_sid=31f6f2ec3&_ss=r">VER PRODUCTO</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--slide 7-------------------------------------->
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <div class="img-box">
+                        <img src="https://api.elektro3.com/images/products/08630.jpg">
+                    </div>
+
+                    <p class="detail">Caja herramientas taburete
+
+                        <a href="#" class="price">31,99 €</a>
+                    </p>
+                    <div class="cart">
+                        <a href="https://comaranda.com/products/caja-herramientas-taburete?_pos=1&_sid=70c30b76f&_ss=r">VER PRODUCTO</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-button-next" style="color: #ff0000;"></div>
+        <div class="swiper-button-prev" style="color: #ff0000;" ></div>
+        </div>
+
+        <!-- Add Arrows -->
+
+    </div>
+
+    <!-- Swiper JS -->
 
 {% endblock %}
    {% block javascripts %}
+       <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+       <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+       <script>
+           var slideIndex = 1;
+           showDivs(slideIndex);
 
+           function plusDivs(n) {
+               showDivs(slideIndex += n);
+           }
+
+           function currentDiv(n) {
+               showDivs(slideIndex = n);
+           }
+
+           function showDivs(n) {
+               var i;
+               var x = document.getElementsByClassName("mySlides");
+               var dots = document.getElementsByClassName("demo");
+               if (n > x.length) {slideIndex = 1}
+               if (n < 1) {slideIndex = x.length}
+               for (i = 0; i < x.length; i++) {
+                   x[i].style.display = "none";
+               }
+               for (i = 0; i < dots.length; i++) {
+                   dots[i].className = dots[i].className.replace(" w3-white", "");
+               }
+               x[slideIndex-1].style.display = "block";
+               dots[slideIndex-1].className += " w3-white";
+           }
+
+           <!-- PRODUCTOS SLIDER -->
+
+           var swiper = new Swiper('.swiper-container', {
+               slidesPerView: 4,
+               spaceBetween: 30,
+               slidesPerGroup: 1,
+               loop: true,
+               loopFillGroupWithBlank: true,
+               pagination: {
+                   el: '.swiper-pagination',
+                   clickable: true,
+               },
+               navigation: {
+                   nextEl: '.swiper-button-next',
+                   prevEl: '.swiper-button-prev',
+               },breakpoints: {
+
+                   100: {
+                       slidesPerView: 1,
+                       spaceBetween: 5,
+                   },
+
+                   350: {
+                       slidesPerView: 1,
+                       spaceBetween: 10,
+                   },
+                   500: {
+                       slidesPerView: 2,
+                       spaceBetween: 20,
+                   },
+                   750: {
+                       slidesPerView: 3,
+                       spaceBetween: 30,
+
+                   },
+                   1000: {
+                       slidesPerView: 4,
+                       spaceBetween: 30,
+                   },
+                   1400: {
+                       slidesPerView: 5,
+                       spaceBetween: 40,
+                   }
+               },
+
+           });
+       </script>
    {% endblock %}

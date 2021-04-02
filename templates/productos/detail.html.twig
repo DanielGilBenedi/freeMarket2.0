@@ -1,0 +1,20 @@
+<div class="col-md-8">
+    <h1 class="mt-4 mt-md-0">{{ producto.nombre }}</h1>
+    <h2>{{ producto.precio }} €</h2>
+    <hr>
+    <b>Description: </b>{{ producto.descripcion }}
+    {{ form_start(form, {'attr': {'class': 'mt-4 p-4 bg-light'}}) }}
+    <div class="form-group">
+        {{ form_label(form.cantidad) }}
+        {{ form_widget(form.cantidad, {
+            'attr': {
+                'class': 'form-control ' ~ (form.cantidad.vars.valid ? '' : 'is-invalid')
+            }
+        }) }}
+        <div class="invalid-feedback">
+            {{ form_errors(form.cantidad) }}
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+</div>

@@ -3,14 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Productos;
+use App\Form\AddToCartType;
 use App\Form\ProductosType;
+use App\Manager\CartManager;
 use App\Repository\ProductosRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Knp\Component\Pager\PaginatorInterface;
 /**
  * @Route("/productos")
  */
@@ -19,10 +21,22 @@ class ProductosController extends AbstractController
     /**
      * @Route("/", name="productos_index", methods={"GET"})
      */
-    public function index(ProductosRepository $productosRepository): Response
+    public function index(ProductosRepository $productosRepository, Request $request, PaginatorInterface $paginator): Response
     {
+        $products = $productosRepository->findAll();
+        $allAppointmentsQuery = $productosRepository->createQueryBuilder('p')
+            ->where('p.id != :id')
+            ->setParameter('id', 'null')
+            ->getQuery();
+        $products = $paginator->paginate(
+            $allAppointmentsQuery,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            10
+        );
         return $this->render('productos/index.html.twig', [
-            'productos' => $productosRepository->findAll(),
+            'productos' => $products,
         ]);
     }
 
@@ -105,5 +119,34 @@ class ProductosController extends AbstractController
         }
 
         return $this->redirectToRoute('productos_index');
+    }
+
+    /**
+     * @Route("/view/{id}", name="product.detail")
+     */
+    public function detail(Productos $producto, Request $request, CartManager $cartManager)
+    {
+        $form = $this->createForm(AddToCartType::class);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $item = $form->getData();
+            $item->setProduct($producto);
+
+            $cart = $cartManager->getCurrentCart();
+            $cart
+                ->addItem($item)
+                ->setUpdatedAt(new \DateTime());
+
+            $cartManager->save($cart);
+
+            return $this->redirectToRoute('product.detail', ['id' => $producto->getId()]);
+        }
+
+        return $this->render('productos/detail.html.twig', [
+            'producto' => $producto,
+            'form' => $form->createView()
+        ]);
     }
 }

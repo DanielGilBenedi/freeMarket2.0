@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}Productos index{% endblock %}
+{% include 'navbar.html.twig' %}
+
   {% block stylesheets %}
       <style>
           img{
@@ -9,8 +9,8 @@
           }</style>
   {% endblock %}
 {% block body %}
-    <h1>Productos index</h1>
-
+    <h1>Productos</h1>
+<br>
     <table class="table">
         <thead>
             <tr>
@@ -38,11 +38,13 @@
                 <td>{{ producto.peso }}</td>
                 <td>{{ producto.descripcion }}</td>
                 <td>{{ producto.ean }}</td>
-                <td><img src="/uploads/productos/{{ producto.imagen }}"></td>
+                <td><img src="{{ producto.imagen }}"></td>
                 <td>{{ producto.stock }}</td>
                 <td>
                     <a href="{{ path('productos_show', {'id': producto.id}) }}">show</a>
                     <a href="{{ path('productos_edit', {'id': producto.id}) }}">edit</a>
+                    <a href="{{ path('product.detail', {'id': producto.id}) }}">Añadir</a>
+
                 </td>
             </tr>
         {% else %}
@@ -54,4 +56,7 @@
     </table>
 
     <a href="{{ path('productos_new') }}">Create new</a>
+    <div class="navigation">
+        {{ knp_pagination_render(productos) }}
+    </div>
 {% endblock %}

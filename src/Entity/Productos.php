@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductosRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,7 +45,7 @@ class Productos
     private $peso;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $descripcion;
 
@@ -71,6 +73,26 @@ class Productos
      * @ORM\ManyToOne(targetEntity=Categorias::class, inversedBy="productos")
      */
     private $id_categoria;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $url;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titulo;
+
+    /**
+     * @ORM\OneToMany(targetEntity=OrderItem::class, mappedBy="product")
+     */
+    private $orderItems;
+
+    public function __construct()
+    {
+        $this->orderItems = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -206,6 +228,60 @@ class Productos
     public function setIdCategoria(?Categorias $id_categoria): self
     {
         $this->id_categoria = $id_categoria;
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): self
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    public function getTitulo(): ?string
+    {
+        return $this->titulo;
+    }
+
+    public function setTitulo(string $titulo): self
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|OrderItem[]
+     */
+    public function getOrderItems(): Collection
+    {
+        return $this->orderItems;
+    }
+
+    public function addOrderItem(OrderItem $orderItem): self
+    {
+        if (!$this->orderItems->contains($orderItem)) {
+            $this->orderItems[] = $orderItem;
+            $orderItem->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrderItem(OrderItem $orderItem): self
+    {
+        if ($this->orderItems->removeElement($orderItem)) {
+            // set the owning side to null (unless already changed)
+            if ($orderItem->getProduct() === $this) {
+                $orderItem->setProduct(null);
+            }
+        }
 
         return $this;
     }

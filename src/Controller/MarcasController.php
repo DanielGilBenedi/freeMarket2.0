@@ -49,6 +49,7 @@ class MarcasController extends AbstractController
                 );
                 $marca->setImagen($originalFilename);
                 $marca->setFecha(new \DateTime("now"));
+                $marca->setUrl(str_replace(' ','-',$form['nombre']->getData()));
             }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($marca);

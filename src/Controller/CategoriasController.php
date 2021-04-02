@@ -49,6 +49,7 @@ class CategoriasController extends AbstractController
                 );
                 $categoria->setImagen($originalFilename);
                 $categoria->setFecha(new \DateTime("now"));
+                $categoria->setUrl(str_replace(' ','-',$form['nombre']->getData()));
             }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($categoria);

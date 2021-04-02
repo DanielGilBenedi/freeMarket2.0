@@ -20,7 +20,7 @@
         ul {
             list-style-type: none;
         }
-        a {
+        li a {
             color: white;
             text-decoration: none;
         }
@@ -60,6 +60,7 @@
             text-align: center;
             order: 3;
             display: none;
+            color: white;
         }
         .item.active {
             display: block;
@@ -147,6 +148,7 @@
             {% if app.user %}
                 <li class="item"><p style="color: white">{{ app.user.email }}</p></li>
                 <li class="item"><a href="{{ path('app_logout') }}">Salir</a></li>
+                <li class="item"><p style="color: white"><a href="{{ path('cart') }}"><i class="fas fa-shopping-cart"></i></a></li>
             {% elseif not app.user %}
 
                 <li class="item button secondary"><a href="{{ path('app_login') }}">Entrar</a></li>
