@@ -5,9 +5,13 @@ namespace App\Manager;
 
 
 use App\Entity\Order;
+use App\Entity\User;
 use App\Factory\OrderFactory;
+use App\Repository\UserRepository;
 use App\Storage\CartSessionStorage;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Security;
+
 
 class CartManager
 {
@@ -25,6 +29,14 @@ class CartManager
      * @var EntityManagerInterface
      */
     private $entityManager;
+    /**
+     * @var UserRepository
+     */
+    private $userRepository;
+    /**
+     * @var Security
+     */
+    private $security;
 
     /**
      * CartManager constructor.
@@ -32,15 +44,21 @@ class CartManager
      * @param CartSessionStorage $cartStorage
      * @param OrderFactory $orderFactory
      * @param EntityManagerInterface $entityManager
+     * @param UserRepository $userRepository
+     * @param Security $security
      */
     public function __construct(
         CartSessionStorage $cartStorage,
         OrderFactory $orderFactory,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        UserRepository $userRepository,
+        Security $security
     ) {
         $this->cartSessionStorage = $cartStorage;
         $this->cartFactory = $orderFactory;
         $this->entityManager = $entityManager;
+        $this->userRepository = $userRepository;
+        $this->security = $security;
     }
 
     /**
@@ -66,10 +84,17 @@ class CartManager
     public function save(Order $cart): void
     {
         // Persist in database
+
+        $idUser = $this->userRepository->findOneBy(['email' => $this->cartSessionStorage->getIdUser($this->security->getUser())]);
+        $cart->setIdCliente($idUser);
         $this->entityManager->persist($cart);
         $this->entityManager->flush();
         // Persist in session
         $this->cartSessionStorage->setCart($cart);
     }
+
+
+
+
 
 }

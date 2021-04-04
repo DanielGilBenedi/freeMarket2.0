@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Productos;
 use App\Form\AddToCartType;
+use App\Form\ProductosModificarType;
 use App\Form\ProductosType;
 use App\Manager\CartManager;
 use App\Repository\ProductosRepository;
@@ -78,7 +79,9 @@ class ProductosController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="productos_show", methods={"GET"})
+     * @Route("/{id}", name="productos_show", methods={"GET","POST"})
+     * @param Productos $producto
+     * @return Response
      */
     public function show(Productos $producto): Response
     {
@@ -92,7 +95,7 @@ class ProductosController extends AbstractController
      */
     public function edit(Request $request, Productos $producto): Response
     {
-        $form = $this->createForm(ProductosType::class, $producto);
+        $form = $this->createForm(ProductosModificarType::class, $producto);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

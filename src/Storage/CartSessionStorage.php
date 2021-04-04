@@ -6,10 +6,12 @@ namespace App\Storage;
 use App\Entity\Order;
 use App\Repository\OrderRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 
 class CartSessionStorage
 {
+
 
     /**
      * The session storage.
@@ -29,6 +31,9 @@ class CartSessionStorage
      * @var string
      */
     const CART_KEY_NAME = 'cart_id';
+
+
+
 
     /**
      * CartSessionStorage constructor.
@@ -53,6 +58,11 @@ class CartSessionStorage
             'id' => $this->getCartId(),
             'status' => Order::STATUS_CART
         ]);
+    }
+    public function getIdUser(UserInterface $user){
+        $emailUser = $user->getUsername();
+
+        return $emailUser;
     }
 
     /**

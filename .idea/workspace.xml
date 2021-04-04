@@ -11,31 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96d0ea1-b2f2-4831-a4a8-28fda0dca306" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/paginator.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Factory/OrderFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EventListener/ClearCartListener.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EventListener/RemoveCartItemListener.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Manager/CartManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Storage/CartSessionStorage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/productos/carga_masiva.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/productos/detail.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/freeMarket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/freeMarket.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ProductosShowType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoriasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoriasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ImportCSVController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ImportCSVController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MarcasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MarcasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Categorias.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Marcas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Marcas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Productos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/principal/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/principal/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/productos/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/productos/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/CartManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/CartManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Storage/CartSessionStorage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Storage/CartSessionStorage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/productos/detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/productos/detail.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +170,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617035420546</updated>
       <workItem from="1617035421667" duration="25135000" />
-      <workItem from="1617257496935" duration="15785000" />
+      <workItem from="1617257496935" duration="19004000" />
+      <workItem from="1617519995959" duration="5561000" />
     </task>
     <servers />
   </component>
@@ -209,17 +195,21 @@
       <screen x="72" y="27" width="1294" height="741" />
     </state>
     <state x="508" y="78" width="412" height="645" key="#com.intellij.ide.util.MemberChooser/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617354552845" />
-    <state x="452" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617130267366">
+    <state x="452" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617524487899">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state x="452" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617130267366" />
+    <state x="452" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617524487899" />
     <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1617113069952">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
     <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617113069952" />
-    <state x="449" y="117" width="593" height="582" key="NewPhpClassDialog" timestamp="1617354668617">
+    <state x="449" y="117" width="593" height="582" key="NewPhpClassDialog" timestamp="1617524465838">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state x="449" y="117" width="593" height="582" key="NewPhpClassDialog/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617354668617" />
+    <state x="449" y="117" width="593" height="582" key="NewPhpClassDialog/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617524465838" />
+    <state x="383" y="174" key="run.anything.popup" timestamp="1617523941698">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="383" y="174" key="run.anything.popup/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617523941698" />
   </component>
 </project>

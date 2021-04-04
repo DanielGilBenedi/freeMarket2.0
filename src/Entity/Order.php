@@ -45,6 +45,11 @@ class Order
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
+     */
+    private $id_cliente;
+
     public function __construct()
     {
         $this->items = new ArrayCollection();
@@ -158,6 +163,18 @@ class Order
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getIdCliente(): ?User
+    {
+        return $this->id_cliente;
+    }
+
+    public function setIdCliente(?User $id_cliente): self
+    {
+        $this->id_cliente = $id_cliente;
 
         return $this;
     }
