@@ -11,16 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96d0ea1-b2f2-4831-a4a8-28fda0dca306" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/ProductosShowType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/freeMarket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/freeMarket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/CartManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/CartManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Storage/CartSessionStorage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Storage/CartSessionStorage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/productos/detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/productos/detail.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +139,9 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/vendor/symfony/uid" />
     </include_path>
   </component>
   <component name="ProjectId" id="1qRHKdyt96DY36ldwiaQnZ5QJFJ" />
@@ -159,6 +160,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -171,7 +173,7 @@
       <updated>1617035420546</updated>
       <workItem from="1617035421667" duration="25135000" />
       <workItem from="1617257496935" duration="19004000" />
-      <workItem from="1617519995959" duration="5561000" />
+      <workItem from="1617519995959" duration="10154000" />
     </task>
     <servers />
   </component>
@@ -191,10 +193,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="508" y="78" width="412" height="645" key="#com.intellij.ide.util.MemberChooser" timestamp="1617354552845">
+    <state x="508" y="78" width="412" height="645" key="#com.intellij.ide.util.MemberChooser" timestamp="1617527832578">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state x="508" y="78" width="412" height="645" key="#com.intellij.ide.util.MemberChooser/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617354552845" />
+    <state x="508" y="78" width="412" height="645" key="#com.intellij.ide.util.MemberChooser/72.27.1294.741/1366.0.1360.768@72.27.1294.741" timestamp="1617527832578" />
     <state x="452" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617524487899">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
