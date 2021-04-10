@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorias;
+use App\Entity\Marcas;
 use App\Entity\Productos;
 use App\Form\AddToCartType;
 use App\Form\ProductosModificarType;
@@ -47,6 +49,8 @@ class ProductosController extends AbstractController
     public function new(Request $request): Response
     {
         $producto = new Productos();
+
+
         $form = $this->createForm(ProductosType::class, $producto);
         $form->handleRequest($request);
 

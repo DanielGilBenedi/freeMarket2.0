@@ -14,8 +14,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Fecha</th>
+
                 <th>Cod_referencia</th>
                 <th>Nombre</th>
                 <th>Precio</th>
@@ -30,8 +29,7 @@
         <tbody>
         {% for producto in productos %}
             <tr>
-                <td>{{ producto.id }}</td>
-                <td>{{ producto.fecha ? producto.fecha|date('Y-m-d') : '' }}</td>
+
                 <td>{{ producto.codReferencia }}</td>
                 <td>{{ producto.nombre }}</td>
                 <td>{{ producto.precio }}</td>
@@ -41,8 +39,8 @@
                 <td><img src="{{ producto.imagen }}"></td>
                 <td>{{ producto.stock }}</td>
                 <td>
-                    <a href="{{ path('productos_show', {'id': producto.id}) }}">show</a>
-                    <a href="{{ path('productos_edit', {'id': producto.id}) }}">edit</a>
+                    <a href="{{ path('productos_show', {'id': producto.id}) }}">Ver</a>
+                    <a href="{{ path('productos_edit', {'id': producto.id}) }}">Editar</a>
                     <a href="{{ path('product.detail', {'id': producto.id}) }}">Añadir</a>
 
                 </td>
@@ -55,7 +53,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('productos_new') }}">Create new</a>
+    <a href="{{ path('productos_new') }}">Crear nuevo</a>
     <div class="navigation">
         {{ knp_pagination_render(productos) }}
     </div>

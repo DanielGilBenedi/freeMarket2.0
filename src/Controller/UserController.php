@@ -68,8 +68,8 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('user_index');
+            $id = $request->get('id');
+            return $this->redirectToRoute('user_edit',['id'=>$id]);
         }
 
         return $this->render('user/edit.html.twig', [
@@ -91,4 +91,6 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('user_index');
     }
+
+
 }

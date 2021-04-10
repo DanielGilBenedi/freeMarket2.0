@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Productos;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -25,8 +26,14 @@ class ProductosType extends AbstractType
                 'mapped' => false
             ])
             ->add('stock')
-            ->add('id_marca')
-            ->add('id_categoria')
+            ->add('id_marca', CollectionType::class, [
+                'entry_type'=>MarcasABSType::class,
+                'entry_options' => ['label' => false]])
+
+            ->add('id_categoria', CollectionType::class, [
+                'entry_type'=>CategoriasABSType::class,
+                'entry_options' => ['label' => false]])
+
         ;
     }
 

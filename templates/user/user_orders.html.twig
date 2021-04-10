@@ -1,0 +1,32 @@
+{% block title %}User Orders{% endblock %}
+
+{% block body %}
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nº Pedido</th>
+        <th>Creado</th>
+
+        <th>Total</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for orders in order %}
+        <tr>
+            <td>{{ orders.id }}</td>
+            <td>{{ orders.createdAt ? orders.createdAt|date('Y-m-d') : '' }}</td>
+
+
+            <td>{{ orders.getTotal() }}</td>
+            <td><button><a href="{{ path('order_details', {'id': orders.id}) }}">Detalles</a></button></td>
+        </tr>
+
+    {% else %}
+        <tr>
+            <td colspan="12">no records found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

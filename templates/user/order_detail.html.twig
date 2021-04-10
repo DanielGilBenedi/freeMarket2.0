@@ -1,0 +1,30 @@
+{% block title %}User Orders{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+
+            <th>Precio</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for orders in order %}
+            <tr>
+                <td>{{ orders.product }}</td>
+                <td>{{ orders.cantidad }}</td>
+                <td>{{ orders.getTotal() }} €</td>
+                <td><button><a href="{{ path('order_details', {'id': orders.id}) }}"></a>Detalles</button></td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

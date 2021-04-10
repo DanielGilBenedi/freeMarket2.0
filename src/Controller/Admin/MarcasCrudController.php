@@ -4,6 +4,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\Marcas;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class MarcasCrudController extends AbstractCrudController
 {
@@ -12,14 +15,13 @@ class MarcasCrudController extends AbstractCrudController
         return Marcas::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+
+            TextField::new('nombre'),
+            TextField::new('descripcion'),
+            ImageField::new('imagen')->setBasePath('/uploads/marcas')->setUploadDir('public/uploads/marcas'),
         ];
     }
-    */
 }

@@ -90,8 +90,8 @@
             }
             .button a {
                 padding: 7.5px 15px;
-                background: teal;
-                border: 1px #006d6d solid;
+                background: #222;
+
             }
             .button.secondary a {
                 background: transparent;
@@ -100,8 +100,8 @@
                 text-decoration: none;
             }
             .button:not(.secondary) a:hover {
-                background: #006d6d;
-                border-color: #005959;
+                background: #222;
+
             }
             .button.secondary a:hover {
                 color: #ddd;
@@ -132,6 +132,52 @@
                 padding-right: 0;
             }
         }
+        /* Style The Dropdown Button */
+        .dropbtn {
+            background-color: #222;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: yellow}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #222;
+        }
     </style>
 {% endblock %}
 {% block body %}
@@ -139,14 +185,24 @@
 
     <nav>
         <ul class="menu">
-            <li class="logo"><a href="#">FreeMarket</a></li>
-            <li class="item"><a href="#">Home</a></li>
-            <li class="item"><a href="#">About</a></li>
+            <li class="logo"><a href="{{ path('principal') }}">FreeMarket</a></li>
 
-            </li>
+
 
             {% if app.user %}
-                <li class="item"><p style="color: white">{{ app.user.email }}</p></li>
+                <div class="dropdown">
+                    <button class="dropbtn">{{ app.user.email }}</button>
+                    <div class="dropdown-content">
+                        <li ><a style="color: white" href="{{ path('userPanel') }}">Cuenta</a></li>
+                        <li ><a style="color: white" href="{{ path('userPanelPedidos') }}">Pedidos</a></li>
+
+                    </div>
+                </div>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li class="item"><a style="color: white" href="{{ path('admin') }}">Panel</a></li>
+
+                {% endif %}
+
                 <li class="item"><a href="{{ path('app_logout') }}">Salir</a></li>
                 <li class="item"><p style="color: white"><a href="{{ path('cart') }}"><i class="fas fa-shopping-cart"></i></a></li>
             {% elseif not app.user %}
