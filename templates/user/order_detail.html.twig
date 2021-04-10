@@ -1,30 +1,41 @@
-{% block title %}User Orders{% endblock %}
+{% block title %}<h1>Detalles del pedido</h1>{% endblock %}
 
 {% block body %}
+    <style>
+
+        img{
+            width: 100px;
+        }
+    </style>
+
     <table class="table">
         <thead>
         <tr>
-            <th>Producto</th>
             <th>Cantidad</th>
-
+            <th>Producto</th>
             <th>Precio</th>
+            <th>Imagen</th>
 
         </tr>
         </thead>
         <tbody>
         {% for orders in order %}
-            <tr>
-                <td>{{ orders.product }}</td>
+    <tr>
                 <td>{{ orders.cantidad }}</td>
-                <td>{{ orders.getTotal() }} €</td>
-                <td><button><a href="{{ path('order_details', {'id': orders.id}) }}"></a>Detalles</button></td>
-            </tr>
+
+        <td>{{ orders.product.nombre }}</td>
+        <td>{{ orders.product.precio }}</td>
+        <td><img src="{{ orders.product.imagen }}"></td>
+    </tr>
 
         {% else %}
             <tr>
                 <td colspan="12">no records found</td>
             </tr>
         {% endfor %}
+
+
+
         </tbody>
     </table>
 {% endblock %}

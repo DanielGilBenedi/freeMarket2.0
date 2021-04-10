@@ -5,10 +5,13 @@ namespace App\Controller\User;
 
 use App\Entity\Order;
 use App\Entity\OrderItem;
+use App\Entity\Productos;
 use App\Entity\User;
+use App\Repository\OrderItemRepository;
 use App\Repository\UserRepository;
 use App\Storage\CartSessionStorage;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -98,25 +101,38 @@ class DashboardUserController extends AbstractController
      */
     public function viewOrderDetails(Request $request){
         $idOrder = $request->get('id');
-        $qb = $this->entityManager->createQuery(
-            "SELECT p FROM Productos p
-where order.id ON order_item.order_ref_id
-INNER JOIN order_item.product_id ON productos.id"
-        );
-        $order = $qb->getResult();
+        $order = $this->getDoctrine()
+            ->getRepository(OrderItem::class)
+            ->findBy(['orderRef'=> $idOrder]);
+    dump($order);
+       /* $cont = 0;
+        dump($order);
+        $productsArray = Array();
+        foreach ($order as $or){
+
+            $order[$cont]->getProduct()->getId();
+
+            $producto = $this->getDoctrine()
+                ->getRepository(Productos::class)
+                ->findBy(['id'=> $order[$cont]->getProduct()->getId()]);
+            array_push($productsArray,$producto);
+
+            $cont++;
+        }
+        dump($productsArray);
         /*$order = $this->getDoctrine()
             ->getRepository(OrderItem::class)
             ->findBy(['orderRef'=> $request->get('id')]);
         foreach ($order as $a){
             dump($a->getProduct());
-        }*/
-        dump($order);
 
-        return $this->render('user/order_detail.html.twig', [
+*/
+       return $this->render('user/order_detail.html.twig', [
             'order' => $order,
 
-        ]);
 
-    }
+        ]);  }
+
+
 }
 ?>
