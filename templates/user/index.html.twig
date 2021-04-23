@@ -10,8 +10,6 @@
             <tr>
                 <th>Id</th>
                 <th>Email</th>
-                <th>Roles</th>
-                <th>Password</th>
                 <th>Empresa</th>
                 <th>Telefono</th>
                 <th>Nombre</th>
@@ -27,8 +25,6 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
                 <td>{{ user.empresa }}</td>
                 <td>{{ user.telefono }}</td>
                 <td>{{ user.nombre }}</td>
@@ -49,5 +45,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+    <a href="{{ path('app_register') }}">Create new</a>
 {% endblock %}

@@ -1,6 +1,4 @@
 
-{% include 'navbar.html.twig' %}
-
 {% block title %}<h1>Detalles del pedido</h1>{% endblock %}
 
 {% block body %}
@@ -18,19 +16,21 @@
             <th>Producto</th>
             <th>Precio</th>
             <th>Imagen</th>
+            <th>Total Unitario</th>
 
         </tr>
         </thead>
         <tbody>
         {% for orders in order %}
-    <tr>
+            <tr>
                 <td>{{ orders.cantidad }}</td>
 
-        <td>{{ orders.product.nombre }}</td>
-        <td>{{ orders.product.precio }} € </td>
-        <td><img src="{{ orders.product.imagen }}"></td>
-        <td>{{ orders.getTotal() }} €</td>
-    </tr>
+                <td>{{ orders.product.nombre }}</td>
+                <td>{{ orders.product.precio }} €</td>
+                <td><img src="{{ orders.product.imagen }}"></td>
+                <td>{{ orders.getTotal() }} €</td>
+
+            </tr>
 
         {% else %}
             <tr>

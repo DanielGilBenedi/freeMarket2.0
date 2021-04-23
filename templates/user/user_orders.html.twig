@@ -1,6 +1,11 @@
-{% block title %}User Orders{% endblock %}
+{% include 'navbar.html.twig' %}
 
+{% block stylesheets %}
+    <link href="{{ asset('assets/css/orders-detail.css') }}" type="text/css" rel="stylesheet" />
+
+{% endblock %}
 {% block body %}
+    <div  class="main-container">
 <table class="table">
     <thead>
     <tr>
@@ -19,7 +24,8 @@
 
 
             <td>{{ orders.getTotal() }}</td>
-            <td><button><a href="{{ path('order_details', {'id': orders.id}) }}">Detalles</a></button></td>
+            <td><button class="btn-more"><a href="{{ path('order_details', {'id': orders.id}) }}">Detalles</a></button></td>
+            <td><button class="btn-more"><a href="{{ path('generar_pdf', {'id': orders.id}) }}">Generar PDF</a></button></td>
         </tr>
 
     {% else %}
@@ -29,4 +35,5 @@
     {% endfor %}
     </tbody>
 </table>
+    </div>
 {% endblock %}

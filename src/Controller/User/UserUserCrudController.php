@@ -46,13 +46,4 @@ class UserUserCrudController extends AbstractCrudController
 
 
 
-    public function configureFields(string $pageName): iterable
-    {
-        $idUser = $this->userRepository->findOneBy(['email' => $this->cartSessionStorage->getIdUser($this->security->getUser())]);
-        $user = $this->entityManager->getRepository(User::class)->findBy([
-            'id' =>$idUser]);
-        $id = $user[0]->getId();
-
-    }
-
 }

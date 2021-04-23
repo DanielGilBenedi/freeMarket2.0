@@ -61,7 +61,6 @@ class CartSessionStorage
     }
     public function getIdUser(UserInterface $user){
         $emailUser = $user->getUsername();
-
         return $emailUser;
     }
 

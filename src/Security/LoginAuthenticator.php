@@ -3,6 +3,7 @@
 namespace App\Security;
 
 use App\Entity\User;
+use SpecShaper\EncryptBundle\Encryptors\EncryptorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,13 +31,15 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
     private $urlGenerator;
     private $csrfTokenManager;
     private $passwordEncoder;
+    private $encryptor;
 
-    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder, EncryptorInterface $encryptor)
     {
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        $this->encryptor = $encryptor;
     }
 
     public function supports(Request $request)
@@ -47,14 +50,17 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
 
     public function getCredentials(Request $request)
     {
+
+
         $credentials = [
             'email' => $request->request->get('email'),
             'password' => $request->request->get('password'),
             'csrf_token' => $request->request->get('_csrf_token'),
         ];
+
         $request->getSession()->set(
             Security::LAST_USERNAME,
-            $credentials['email']
+           $credentials['email']
         );
 
         return $credentials;
@@ -67,7 +73,24 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
             throw new InvalidCsrfTokenException();
         }
 
-        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);
+        $allUser = $this->entityManager->getRepository(User::class)->findAll();
+
+    $id = 0;
+
+        foreach ($allUser as $oneUs){
+           $mail =$this->encryptor->decrypt($oneUs->getEmail());
+
+            if($mail === $credentials['email']){
+                $id =$oneUs->getId();
+                dump($id);
+
+
+            }
+        }
+
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['id' => $id]);
+
+        //$user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);
 
         if (!$user) {
             // fail authentication with a custom error

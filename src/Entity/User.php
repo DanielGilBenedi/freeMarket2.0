@@ -6,6 +6,7 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use SpecShaper\EncryptBundle\Annotations\Encrypted;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -24,6 +25,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Encrypted
      */
     private $email;
 
@@ -40,36 +42,43 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted
      */
     private $empresa;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Encrypted
      */
     private $telefono;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Encrypted
      */
     private $nombre;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Encrypted
      */
     private $cod_cliente;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted
      */
     private $direccion;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted
      */
     private $provincia;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted
      */
     private $ciudad;
 
@@ -145,8 +154,11 @@ class User implements UserInterface
 
     public function setPassword(string $password): self
     {
-        $this->password = $password;
+        global $kernel;
+        if (method_exists($kernel, 'getKernel'))
+            $kernel = $kernel->getKernel();
 
+        $this->password = $kernel->getContainer()->get('security.password_encoder')->encodePassword($this, $password);
         return $this;
     }
 

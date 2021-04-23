@@ -78,8 +78,8 @@ class Order
         foreach ($this->getItems() as $existingItem) {
             // The item already exists, update the quantity
             if ($existingItem->equals($item)) {
-                $existingItem->setQuantity(
-                    $existingItem->getQuantity() + $item->getQuantity()
+                $existingItem->setCantidad(
+                    $existingItem->getCantidad() + $item->getCantidad()
                 );
                 return $this;
             }
@@ -108,8 +108,10 @@ class Order
     public function removeItem(OrderItem $item): self
     {
         if ($this->items->removeElement($item)) {
+            dump($this->items);
             // set the owning side to null (unless already changed)
             if ($item->getOrderRef() === $this) {
+                dump($item->getOrderRef());
                 $item->setOrderRef(null);
             }
         }
@@ -132,6 +134,8 @@ class Order
 
         return $total;
     }
+
+
 
     public function getStatus(): ?string
     {

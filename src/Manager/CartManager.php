@@ -85,8 +85,10 @@ class CartManager
     {
         // Persist in database
 
-        $idUser = $this->userRepository->findOneBy(['email' => $this->cartSessionStorage->getIdUser($this->security->getUser())]);
+        $idUser = $this->userRepository->findOneBy(['id' => $this->security->getUser()->getId()]);
         $cart->setIdCliente($idUser);
+
+
         $this->entityManager->persist($cart);
         $this->entityManager->flush();
         // Persist in session

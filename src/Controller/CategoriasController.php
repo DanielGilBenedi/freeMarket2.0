@@ -107,4 +107,5 @@ class CategoriasController extends AbstractController
 
         return $this->redirectToRoute('categorias_index');
     }
+
 }

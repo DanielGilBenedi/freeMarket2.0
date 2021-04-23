@@ -18,6 +18,38 @@ class ProductosRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Productos::class);
     }
+    /**
+     * @return Productos[] Returns an array of Productos objects
+     */
+    public function getProductosByCat($id){
+
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.id_categoria = :val')
+            ->setParameter('val', $id)
+            ->orderBy('c.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+
+
+    }
+
+
+    /**
+     * @return Productos[] Returns an array of Productos objects
+     */
+    public function getProductosByMarc($id){
+
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.id_marca = :val')
+            ->setParameter('val', $id)
+            ->orderBy('c.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+
+
+    }
 
     // /**
     //  * @return Productos[] Returns an array of Productos objects

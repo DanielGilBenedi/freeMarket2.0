@@ -178,6 +178,10 @@
         .dropdown:hover .dropbtn {
             background-color: #222;
         }
+
+        .pmc{
+          margin-right: 500px;
+        }
     </style>
 {% endblock %}
 {% block body %}
@@ -190,6 +194,13 @@
 
 
             {% if app.user %}
+            <div class="pmc">
+                <ul class="menu" >
+                    <li><a class="item-l" href="{{ path('productos_index') }}">Catalogo</a></li>
+                    <li><a class="item-l" href="{{ path('marcas_index') }}">Marcas</a></li>
+                    <li><a class="item-l" href="{{ path('categorias_index') }}">Categorias</a></li>
+                </ul>
+            </div>
                 <div class="dropdown">
                     <button class="dropbtn">{{ app.user.email }}</button>
                     <div class="dropdown-content">

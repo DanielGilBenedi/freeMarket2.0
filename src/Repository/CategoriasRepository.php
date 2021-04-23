@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Categorias;
+use App\Entity\Productos;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -47,4 +48,6 @@ class CategoriasRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
 }

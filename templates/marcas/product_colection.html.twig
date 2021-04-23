@@ -1,0 +1,36 @@
+{% include 'navbar.html.twig' %}
+
+
+  {% block stylesheets %}
+      <link href="{{ asset('assets/css/cards.css') }}" type="text/css" rel="stylesheet" />
+
+  {% endblock %}
+
+{% block body %}
+    <div class="main">
+        <h1>Productos</h1>
+        <ul class="cards">
+
+            {% for producto in categorias %}
+
+                <li class="cards_item">
+                    <div class="card">
+                        <div class="card_image"><img src="{{ producto.imagen }}"></div>
+                        <div class="card_content">
+                            <h2 class="card_title">{{ producto.nombre }}</h2>
+                            <p class="card_text">{{ producto.precio }} €</p>
+                            <button class="btn card_btn"><a href="{{ path('product.detail', {'id': producto.id}) }}">Ver producto</a></button>
+                        </div>
+                    </div>
+                </li>
+
+            {% else %}
+                <p>No hay resultados</p>
+            {% endfor %}
+        </ul>
+        <div class="navigation">
+            {{ knp_pagination_render(categorias) }}
+        </div>
+    </div>
+
+{% endblock %}

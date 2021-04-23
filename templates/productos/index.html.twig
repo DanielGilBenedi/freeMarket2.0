@@ -2,59 +2,43 @@
 {% include 'navbar.html.twig' %}
 
   {% block stylesheets %}
-      <style>
-          img{
-              width: 100px;
-              heigth: 1000px;
-          }</style>
+      <link href="{{ asset('assets/css/cards.css') }}" type="text/css" rel="stylesheet" />
+
   {% endblock %}
 {% block body %}
-    <h1>Productos</h1>
-<br>
-    <table class="table">
-        <thead>
-            <tr>
+    <div class="main">
+        <h1>Productos</h1>
+        <ul class="cards">
 
-                <th>Cod_referencia</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Peso</th>
-                <th>Descripcion</th>
-                <th>Ean</th>
-                <th>Imagen</th>
-                <th>Stock</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for producto in productos %}
-            <tr>
 
-                <td>{{ producto.codReferencia }}</td>
-                <td>{{ producto.nombre }}</td>
-                <td>{{ producto.precio }}</td>
-                <td>{{ producto.peso }}</td>
-                <td>{{ producto.descripcion }}</td>
-                <td>{{ producto.ean }}</td>
-                <td><img src="{{ producto.imagen }}"></td>
-                <td>{{ producto.stock }}</td>
-                <td>
-                    <a href="{{ path('productos_show', {'id': producto.id}) }}">Ver</a>
-                    <a href="{{ path('productos_edit', {'id': producto.id}) }}">Editar</a>
-                    <a href="{{ path('product.detail', {'id': producto.id}) }}">Añadir</a>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="{{ producto.imagen }}"></div>
+                    <div class="card_content">
+                        <h2 class="card_title">{{ producto.nombre }}</h2>
+                        <p class="card_text">{{ producto.precio }} €</p>
+                        <button class="btn card_btn"><a href="{{ path('product.detail', {'id': producto.id}) }}">Ver producto</a></button>
+                    </div>
+                </div>
+            </li>
 
-                </td>
-            </tr>
         {% else %}
-            <tr>
-                <td colspan="11">no records found</td>
-            </tr>
+            <p>No hay resultados</p>
         {% endfor %}
-        </tbody>
-    </table>
+            </ul>
+        <div class="navigation">
+            {{ knp_pagination_render(productos) }}
+        </div>
+        </div>
 
-    <a href="{{ path('productos_new') }}">Crear nuevo</a>
-    <div class="navigation">
-        {{ knp_pagination_render(productos) }}
-    </div>
+
+
+
+
+
+
 {% endblock %}
+
+
+

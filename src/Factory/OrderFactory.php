@@ -35,7 +35,7 @@ class OrderFactory
     {
         $item = new OrderItem();
         $item->setProduct($product);
-        $item->setQuantity(1);
+        $item->setCantidad(1);
 
         return $item;
     }

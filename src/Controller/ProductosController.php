@@ -36,7 +36,7 @@ class ProductosController extends AbstractController
             // Define the page parameter
             $request->query->getInt('page', 1),
             // Items per page
-            10
+            12
         );
         return $this->render('productos/index.html.twig', [
             'productos' => $products,
@@ -154,6 +154,46 @@ class ProductosController extends AbstractController
         return $this->render('productos/detail.html.twig', [
             'producto' => $producto,
             'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/productos", name="productos_categoria",  methods={"GET"})
+     */
+    public function prodCategoria(Categorias $categoria, Request $request, PaginatorInterface $paginator, ProductosRepository $productoRepository) : Response{
+
+
+        $allAppointmentsQuery = $productoRepository->getProductosByCat($categoria->getId());
+        $products = $paginator->paginate(
+            $allAppointmentsQuery,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            12
+        );
+        return $this->render('categorias/product_colection.html.twig', [
+            'categorias' => $products,
+        ]);
+    }
+
+
+
+    /**
+     * @Route("/{id}/productos-marcas", name="productos_marca",  methods={"GET"})
+     */
+    public function prodMarca(Marcas $categoria, Request $request, PaginatorInterface $paginator, ProductosRepository $productoRepository) : Response{
+
+
+        $allAppointmentsQuery = $productoRepository->getProductosByMarc($categoria->getId());
+        $products = $paginator->paginate(
+            $allAppointmentsQuery,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            12
+        );
+        return $this->render('marcas/product_colection.html.twig', [
+            'categorias' => $products,
         ]);
     }
 }

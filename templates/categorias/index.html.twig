@@ -1,41 +1,32 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}Categorias index{% endblock %}
+{% include 'navbar.html.twig' %}
+
+  {% block stylesheets %}
+      <link href="{{ asset('assets/css/cards.css') }}" type="text/css" rel="stylesheet" />
+
+  {% endblock %}
 
 {% block body %}
-    <h1>Categorias index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Imagen</th>
-                <th>Fecha</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="main">
+    <h1>Categorias</h1>
+    <ul class="cards">
         {% for categoria in categorias %}
-            <tr>
-                <td>{{ categoria.id }}</td>
-                <td>{{ categoria.nombre }}</td>
-                <td>{{ categoria.descripcion }}</td>
-                <td><img src="/uploads/categorias/{{ categoria.imagen }}"></td>
-                <td>{{ categoria.fecha ? categoria.fecha|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('categorias_show', {'id': categoria.id}) }}">show</a>
-                    <a href="{{ path('categorias_edit', {'id': categoria.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('categorias_new') }}">Create new</a>
+                <li class="cards_item">
+                    <a href="{{ path('productos_categoria', {'id': categoria.id}) }}">
+                        <div class="card">
+                            <div class="card_image"><img src="/uploads/categorias/{{ categoria.imagen }}"></div>
+                            <div class="card_content">
+                                <h2 class="card_title">{{ categoria.nombre }}</h2>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+        {% else %}
+            <p>No hay resultados</p>
+        {% endfor %}
+
+    </ul>
+</div>
+
 {% endblock %}
