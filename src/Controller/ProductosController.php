@@ -12,6 +12,7 @@ use App\Manager\CartManager;
 use App\Repository\ProductosRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -196,4 +197,6 @@ class ProductosController extends AbstractController
             'categorias' => $products,
         ]);
     }
+
+
 }
