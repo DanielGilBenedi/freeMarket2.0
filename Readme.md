@@ -34,6 +34,10 @@ Necesitaremos curl para descargar Composer y php-cli para instalarlo y ejecutarl
 ```
 $ sudo apt install curl php-cli php-mbstring git unzip
 ``` 
+*Es posible que se nos pida la extensión php-xml el comando es el siguiente*
+```
+sudo apt install php-xml
+```
 
 Composer ofrece un instalador escrito en PHP. Lo descargaremos, comprobaremos que no esté dañado y lo utilizaremos para instalar Composer.
 
