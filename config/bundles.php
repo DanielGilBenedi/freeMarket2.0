@@ -17,4 +17,5 @@ return [
     EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle::class => ['all' => true],
     Knp\Bundle\SnappyBundle\KnpSnappyBundle::class => ['all' => true],
     SpecShaper\EncryptBundle\SpecShaperEncryptBundle::class => ['all' => true],
+    Algolia\SearchBundle\AlgoliaSearchBundle::class => ['all' => true],
 ];
