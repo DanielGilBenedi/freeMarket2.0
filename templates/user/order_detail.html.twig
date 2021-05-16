@@ -1,23 +1,52 @@
 
 {% include 'navbar.html.twig' %}
 
-{% block title %}<h1>Detalles del pedido</h1>{% endblock %}
 
 {% block body %}
     <style>
+        .table-container{
+            width: 100%;
+            margin-top: 40px;
+
+        }
+        .table-container h1{
+            text-align: center;
+        }
+
+        .table-container p{
+            float: right;
+        }
+        .container{
+
+            text-align: center;
+            margin: auto;
+
+        }
+        .container th{
+            padding: 50px;
+        }
+        .table-total{
+            margin: auto;
+            width: 200px;
+            margin-top: 40px;
+        font-size: 1.25rem;
+        }
+
 
         img{
-            width: 100px;
+            width: 80px;
         }
     </style>
-
-    <table class="table">
+    <div class="table-container">
+        <h1>Detalles del pedido</h1>
+    <table class="container">
         <thead>
         <tr>
             <th>Cantidad</th>
             <th>Producto</th>
             <th>Precio</th>
             <th>Imagen</th>
+            <th>Coste Unidad</th>
 
         </tr>
         </thead>
@@ -41,6 +70,10 @@
 
 
         </tbody>
+
     </table>
-    <p>Total {{ total }} €</p>
+    <div class="table-total">
+        <p>Total {{ total }} €</p>
+    </div>
+    </div>
 {% endblock %}

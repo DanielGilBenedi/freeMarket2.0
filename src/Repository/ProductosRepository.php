@@ -51,6 +51,18 @@ class ProductosRepository extends ServiceEntityRepository
 
     }
 
+
+
+    public function searchProd($value)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.nombre = :val')
+            ->setParameter('val','%'.$value.'%')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Productos[] Returns an array of Productos objects
     //  */
