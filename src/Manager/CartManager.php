@@ -5,12 +5,16 @@ namespace App\Manager;
 
 
 use App\Entity\Order;
+use App\Entity\Productos;
 use App\Entity\User;
 use App\Factory\OrderFactory;
+use App\Form\EventListener\RemoveCartItemListener;
+use App\Repository\ProductosRepository;
 use App\Repository\UserRepository;
 use App\Storage\CartSessionStorage;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Contracts\EventDispatcher\Event;
 
 
 class CartManager
@@ -33,6 +37,11 @@ class CartManager
      * @var UserRepository
      */
     private $userRepository;
+
+    /**
+     * @var ProductosRepository
+     */
+    private $productoRepository;
     /**
      * @var Security
      */
@@ -46,19 +55,22 @@ class CartManager
      * @param EntityManagerInterface $entityManager
      * @param UserRepository $userRepository
      * @param Security $security
+     * @param ProductosRepository $productoRepository
      */
     public function __construct(
         CartSessionStorage $cartStorage,
         OrderFactory $orderFactory,
         EntityManagerInterface $entityManager,
         UserRepository $userRepository,
-        Security $security
+        Security $security,
+        ProductosRepository $productoRepository
     ) {
         $this->cartSessionStorage = $cartStorage;
         $this->cartFactory = $orderFactory;
         $this->entityManager = $entityManager;
         $this->userRepository = $userRepository;
         $this->security = $security;
+        $this->productoRepository = $productoRepository;
     }
 
     /**
@@ -87,13 +99,24 @@ class CartManager
 
         $idUser = $this->userRepository->findOneBy(['id' => $this->security->getUser()->getId()]);
         $cart->setIdCliente($idUser);
+        $order = $this->cartSessionStorage->getCart();
 
+        foreach ($order->getItems() as $orders){
+            $product = $this->productoRepository->findOneBy(['id' => $orders->getProduct()->getId()]);
+            dump($product);
+            $product->setStock($product->getStock()-$orders->getCantidad());
+        }
 
         $this->entityManager->persist($cart);
         $this->entityManager->flush();
-        // Persist in session
+
+
         $this->cartSessionStorage->setCart($cart);
+
+
     }
+
+
 
 
 

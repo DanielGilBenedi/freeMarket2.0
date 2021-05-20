@@ -2,36 +2,17 @@
 
 {% include 'navbar.html.twig' %}
 {% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        #user{
+        form .btn{
 
-            max-width: 1000px;
-            margin-left: 40%;
-            justify-content: center;
-            text-align: left;
-        }
-
-        #user div{
-            padding: 5px;
-
-        }
-
-        #user div input{
-            display: block;
-            direction: ltr;
-            width: 200px;
-        }
-
-        form button{
-            margin-left: 43%;
-            margin-top: 10px;
             color: #ffffff;
             padding: 0.8rem;
             font-size: 14px;
             text-transform: uppercase;
             border-radius: 4px;
             font-weight: 400;
-            display: block;
+
             width: 120px;
             cursor: pointer;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -39,17 +20,92 @@
             bottom: 0;
         }
 
-        #user div:first-child{
-            margin-top: 50px;
-        }
     </style>
 {% endblock %}
 {% block body %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<div class="container mt-4">
+    <h3 class="text-center">Modificar Usuario</h3>
+    <br><br>
+        {{ form_start(form) }}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ form_label(form.email) }}
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_label(form.nombre) }}
+                {{ form_errors(form.nombre) }}
+                {{ form_widget(form.nombre) }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ form_label(form.empresa) }}
+                {{ form_errors(form.empresa) }}
+                {{ form_widget(form.empresa) }}
+            </div>
+            <div class="form-group col-md-6">
 
+                {{ form_label(form.cod_cliente) }}
+                {{ form_errors(form.cod_cliente) }}
+                {{ form_widget(form.cod_cliente) }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ form_label(form.provincia) }}
+                {{ form_errors(form.provincia) }}
+                {{ form_widget(form.provincia) }}
+            </div>
+            <div class="form-group col-md-6">
+
+                {{ form_label(form.ciudad) }}
+                {{ form_errors(form.ciudad) }}
+                {{ form_widget(form.ciudad)}}
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            {{ form_label(form.direccion) }}
+            {{ form_errors(form.direccion) }}
+            {{ form_widget(form.direccion) }}
+
+        </div>
+        <div class="form-group">
+
+
+            {{ form_label(form.telefono) }}
+            {{ form_errors(form.telefono) }}
+            {{ form_widget(form.telefono) }}
+        </div>
+
+
+
+
+
+
+
+
+<div class="form-row">
+    <div class="btn-group" role="group" aria-label="Basic example">
+    <div class="form-group col-md-6">
 
     {{ include('user/_form.html.twig', {'button_label': 'Actualizar'}) }}
 
+    </div>
 
-
+    <div class="form-group col-md-6">
     {{ include('user/_delete_form.html.twig',  {'button_label': 'Eliminar'})  }}
+
+    </div>
+    </div>
+</div>
+        {{ form_end(form) }}
+</div>
 {% endblock %}

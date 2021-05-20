@@ -17,7 +17,7 @@
         <ul class="cards">
 
         {% for producto in productos %}
-
+            {% if producto.stock > 0 %}
             <li class="cards_item">
                 <div class="card">
                     <div class="card_image"><img src="{{ producto.imagen }}"></div>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </li>
-
+            {% endif %}
         {% else %}
             <p>No hay resultados</p>
         {% endfor %}
@@ -40,11 +40,7 @@
 
 
 
-
-
-
-
 {% endblock %}
 
-
+  {% include 'footer.html.twig' %}
 

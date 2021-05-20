@@ -7,6 +7,10 @@
 
              height: 40px;
          }
+         .form-control{
+             background-color: white;
+             border: 1px ;
+         }
      </style>
  {% endblock %}
 {% block body %}
@@ -42,7 +46,9 @@
         {{ form_end(form) }}
     </div>
 </div>
+
 {% endblock %}
+
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -55,4 +61,5 @@
 
     });
 </script>
+
 {% endblock %}

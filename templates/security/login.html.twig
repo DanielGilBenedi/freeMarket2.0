@@ -1,11 +1,10 @@
-{% include 'navbar.html.twig' %}
 
 
  {% block steelshet %}
      <style>
         .wrapper{
             margin-top: 7%;
-            background-color: #444444;
+            background-color: #222;
             width: 400px;
             height: 300px;
             margin-left: 35%;
@@ -27,15 +26,29 @@
             display: none;
         }
         #login-button{
-            padding: 10px;
-            margin-top: 30px;
+            margin-top: 20px;
+            color: #ffffff;
+            padding: 0.8rem;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            font-weight: 400;
+
+            width: 120px;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(to bottom left, #f6d148 40%, #ffc89e 100%);
+            bottom: 0;
 
         }
 
         .title{
             padding-top: 20px;
         }
+        .title h1{
+            color: white;
 
+        }
      </style>
  {% endblock %}
 {% block body %}
@@ -44,7 +57,7 @@
 <div class="wrapper">
     <div class="container">
         <div class="title">
-        <h1>Bienvenido</h1>
+        <h1>Entrar</h1>
         </div>
 <form method="post" class="form">
 
@@ -57,16 +70,6 @@
            value="{{ csrf_token('authenticate') }}"
     >
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
 
     <button id="login-button" type="submit">
         Entrar
