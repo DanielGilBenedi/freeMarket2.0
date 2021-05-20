@@ -3,15 +3,22 @@
 namespace App\Controller;
 
 use App\Entity\Order;
+use App\Factory\OrderFactory;
+use App\Manager\CartManager;
+use App\Repository\ProductosRepository;
+use App\Repository\UserRepository;
 use App\Storage\CartSessionStorage;
+use Doctrine\ORM\EntityManagerInterface;
 use Stripe\Stripe;
 use Stripe\StripeClient;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Asset\Package;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Security\Core\Security;
 
 class StripeController extends AbstractController
 {
@@ -19,8 +26,10 @@ class StripeController extends AbstractController
      * @var CartSessionStorage
      */
     private $cartSessionStorage;
-    public function __construct(CartSessionStorage $cartStorage){
+    private $productoRepository;
+    public function __construct(CartSessionStorage $cartStorage, ProductosRepository $productoRepository){
         $this->cartSessionStorage = $cartStorage;
+        $this->productoRepository = $productoRepository;
     }
     /**
      * @Route("/stripe", name="stripe")
@@ -35,9 +44,14 @@ class StripeController extends AbstractController
      * @Route("/checkout_session", name="checkout")
      */
     public function checkout(){
-
         $total =  $this->cartSessionStorage->getCart()->getTotal();
+        $img = $this->cartSessionStorage->getCart()->getItems();
+        $imagen = array();
+        foreach ($img as $image){
+          array_push($imagen,$image->getProduct()->getImagen());
+        }
         $a = $total*100;
+
         Stripe::setApiKey('sk_test_51Ik3C3C3IOqzxw5IitUoHr0wHKmpPRpmiUI61KcGhq4UHhNtOqfkkz5oUsG0WsA4ioDFEwl84I5CFzuBYD9rlypX00kcIediJy');
 
 
@@ -55,9 +69,9 @@ class StripeController extends AbstractController
 
                     'product_data' => [
 
-                        'name' => 'Stubborn Attachments',
+                        'name' => 'Pago Freemarket',
 
-                        'images' => ["https://i.imgur.com/EHyR2nP.png"],
+                        'images' => [$imagen],
 
                     ],
 
@@ -84,7 +98,11 @@ class StripeController extends AbstractController
      */
     public function succesPay(){
         $id =  $this->cartSessionStorage->getCart()->getId();
+
+
         return $this->redirectToRoute('order_details',['id' => $id]);
+
+
     }
 
 

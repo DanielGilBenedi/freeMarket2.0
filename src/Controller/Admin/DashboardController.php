@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\OrderItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Menu\LogoutMenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -42,14 +43,15 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');       yield MenuItem::linkToCrud('Usuarios', 'fas fa-user', User::class);
+        yield MenuItem::linkToRoute('Inicio', 'fa fa-home','principal');
+        yield MenuItem::linkToCrud('Usuarios', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Productos', 'fas fa-cube', Productos::class);
         yield MenuItem::linkToCrud('Pedidos', 'fas fa-receipt', Order::class);
         yield MenuItem::linkToCrud('Marcas', 'fas fa-bookmark', Marcas::class);
         yield MenuItem::linkToCrud('Categorias', 'fas fa-copyright', Categorias::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
         yield MenuItem::linkToRoute('Importar', 'fas fa-file-upload','carga_masiva');
-        yield MenuItem::linkToRoute('Salir', 'fas fa-sign-out-alt','principal');
+
 
     }
 }

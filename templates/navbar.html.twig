@@ -14,6 +14,9 @@
             background: #f1f1f1;
 
         }
+        .menu .item a:hover{
+            color:#f6d148
+        }
 
         nav {
             background: #222;
@@ -51,7 +54,7 @@
         .menu {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+
             align-items: center;
         }
         .toggle {
@@ -66,6 +69,20 @@
             order: 3;
             display: none;
             color: white;
+
+        }
+        .item a{
+            text-decoration: none;
+        }
+        .item:nth-child(2){
+            margin-left: 10%;
+        }
+
+        #carrito{
+            margin-left: 15%;
+        }
+        #catalogo, #categorias, #marcas{
+            padding-left: 60px;
         }
         .item.active {
             display: block;
@@ -76,8 +93,17 @@
                 display: none;
             }
         }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1200px) {
+            .item{
+                align-content:center;
+            }
+            .item:nth-child(2){
+                margin-left: 0;
+            }
+            #carrito{
+                margin-left:50px;
 
+            }
             .autocomplete{
                 width: 200px;
             }
@@ -181,7 +207,7 @@
         }
 
         /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {background-color: yellow}
+        .dropdown-content a:hover {background-color:#f6d148}
 
         /* Show the dropdown menu on hover */
         .dropdown:hover .dropdown-content {
@@ -199,6 +225,8 @@
         .autocomplete {
             position: relative;
             display: inline-block;
+            width:60%;
+
 
         }
 
@@ -211,7 +239,7 @@
 
         input[type=text] {
             background-color: #f1f1f1;
-            width: 100%;
+            width:100%;
         }
 
         input[type=submit] {
@@ -238,6 +266,7 @@
             cursor: pointer;
             background-color: #fff;
             border-bottom: 1px solid #d4d4d4;
+
         }
 
         /*when hovering an item:*/
@@ -268,7 +297,7 @@
         padding: -20px;
         margin-left: -120px;
     }
-        .search-button{
+        .search-boton{
             position: relative;
             margin-left: -50px;
 
@@ -289,6 +318,11 @@
             margin: auto;
             margin-bottom: 15px;
         }
+
+        .item-inicio{
+            position: relative;
+            margin-left: 70%;
+        }
     </style>
 {% endblock %}
 {% block body %}
@@ -296,12 +330,12 @@
 
     <nav>
         <ul class="menu">
-            <li class="logo"><a href="{{ path('principal') }}">FreeMarket</a></li>
+            <li class="logo"><a href="{{ path('principal') }}"><img width="70%" src="{{ asset('FreeMarket.png') }}"></a></li>
 
             {% if app.user %}
-                <li><a class="item-2" href="{{ path('productos_index') }}">Catalogo</a></li>
-                <li><a class="item-2" href="{{ path('marcas_index') }}">Marcas</a></li>
-                <li><a class="item-2" href="{{ path('categorias_index') }}">Categorias</a></li>
+                <li class="item" id="catalogo"><a  href="{{ path('productos_index') }}">Catálogo</a></li>
+                <li class="item" id="marcas"><a  href="{{ path('marcas_index') }}">Marcas</a></li>
+                <li class="item" id="categorias"><a  href="{{ path('categorias_index') }}">Categorías</a></li>
 
                 <div class="dropdown">
                     <button class="dropbtn">Bienvenido, <b>{{ app.user.nombre }}</b></button>
@@ -317,22 +351,24 @@
                     </div>
                 </div>
 
-                <li class="item"><p style="color: white"><a href="{{ path('cart') }}"><i class="fas fa-shopping-cart"></i></a></li>
+                <li class="item" id="carrito"><a href="{{ path('cart') }}"><i class="fas fa-shopping-cart"></i></a></li>
             {% elseif not app.user %}
 
-                <li class="item button secondary"><a href="{{ path('app_login') }}">Entrar</a></li>
+                <li class="item-inicio"><a href="{{ path('app_login') }}">Entrar</a></li>
             {% endif %}
             <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
         </ul>
+        {% if app.user %}
         <div class="search-container">
             <form class="search-form" autocomplete="off" action="">
-                <div class="autocomplete" style="width:60%; display: inline-block;">
-                    <input id="myInput" type="text" name="myCountry" placeholder="Country">
-                    <button class="search-button"><i class="fas fa-search"></i></button>
-                </div>
+                <div class="autocomplete">
+                    <input id="myInput" type="text" name="myCountry" placeholder="Buscar...">
 
+                </div>
+                <button class="search-boton"><i class="fas fa-search"></i></button>
             </form>
         </div>
+        {% endif %}
     </nav>
 
 
@@ -357,7 +393,7 @@
            {
 
                $.ajax({
-                   url : 'api/get_products',
+                   url : '/api/get_products',
                    type : 'GET',
                    dataType : 'json',
 
@@ -380,7 +416,7 @@
 
 
                                    b = document.createElement("DIV");
-                                   /*make the matching letters bold:*/
+
                            b.setAttribute("id", value['id']);
                            b.setAttribute("class", "dynamic-content");
                                    b.innerHTML = value['nombre'];

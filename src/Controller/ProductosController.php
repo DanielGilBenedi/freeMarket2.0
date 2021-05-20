@@ -37,7 +37,7 @@ class ProductosController extends AbstractController
             // Define the page parameter
             $request->query->getInt('page', 1),
             // Items per page
-            12
+            16
         );
         return $this->render('productos/index.html.twig', [
             'productos' => $products,
@@ -170,7 +170,7 @@ class ProductosController extends AbstractController
             // Define the page parameter
             $request->query->getInt('page', 1),
             // Items per page
-            12
+            16
         );
         return $this->render('categorias/product_colection.html.twig', [
             'categorias' => $products,
@@ -191,7 +191,7 @@ class ProductosController extends AbstractController
             // Define the page parameter
             $request->query->getInt('page', 1),
             // Items per page
-            12
+            16
         );
         return $this->render('marcas/product_colection.html.twig', [
             'categorias' => $products,

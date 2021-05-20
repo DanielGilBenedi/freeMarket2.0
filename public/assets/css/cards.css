@@ -79,7 +79,7 @@
 
 .card_content {
     padding: 1rem;
-    background: linear-gradient(to bottom left, #f6d148 40%, #ffc89e 100%);
+    background-color: #f6d148;
     height: 100%;
 }
 
