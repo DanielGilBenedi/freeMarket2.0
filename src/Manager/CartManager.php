@@ -100,12 +100,14 @@ class CartManager
         $idUser = $this->userRepository->findOneBy(['id' => $this->security->getUser()->getId()]);
         $cart->setIdCliente($idUser);
         $order = $this->cartSessionStorage->getCart();
-
-        foreach ($order->getItems() as $orders){
-            $product = $this->productoRepository->findOneBy(['id' => $orders->getProduct()->getId()]);
-            dump($product);
-            $product->setStock($product->getStock()-$orders->getCantidad());
+        if($order){
+            foreach ($order->getItems() as $orders){
+                $product = $this->productoRepository->findOneBy(['id' => $orders->getProduct()->getId()]);
+                dump($product);
+                $product->setStock($product->getStock()-$orders->getCantidad());
+            }
         }
+
 
         $this->entityManager->persist($cart);
         $this->entityManager->flush();

@@ -1,4 +1,9 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}FreeMarket{% endblock %}</title>
 {% include 'navbar.html.twig' %}
 {% block stylesheets %}
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -7,7 +12,7 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <style>
         body{
             background-color: white;
@@ -19,31 +24,27 @@
             width: 100%;
             margin-top: 0px;
         }
-
         .w3-content{
             max-width: 100%;
         }
-
         .mySlides{
             width: 100%;
         }
-
         /*SLIDER DE LOS PRODUCTOS*/
-
         .product-slider{
             margin-top: 100px;
-        }
+            text-align: center;
 
+        }
         .swiper-container {
             width: 90%;
             height: 60%;
+            margin-top: 40px;
         }
-
         .swiper-slide {
             text-align: center;
             font-size: 18px;
             background: #fff;
-
             /* Center slide text vertically */
             display: -webkit-box;
             display: -ms-flexbox;
@@ -59,7 +60,6 @@
             align-items: center;
         }
         .slider-box{
-
             height:100%;
             width:100%;
             position:relative;
@@ -111,24 +111,21 @@
         .cart a{
             color:#FFFFFF;
             font-family: 'Unica One', cursive;}
-
         .slider-box:hover{
             box-shadow:2px 2px 12px rgba(47,47,47,0.40);
-        }
-        .slider-box:hover .img-box img{
-            transform:scale(1.07);
+            transform:scale(1.01);
             transition:all ease 0.3s;}
+
+
         .cart a:hover{
             color: #222}
-      .swiper-button-prev {  color: #f6d148; }
+        .swiper-button-prev {  color: #f6d148; }
         .swiper-button-next { color: #f6d148; }
-
         @media only screen and (max-width: 768px) {
             .swiper-container {
                 height: 400px;
             }
         }
-
         .contenido-empresa{
             margin-top: 100px;
             text-align: justify;
@@ -139,20 +136,26 @@
             text-align: center;
         }
 
+        .contenido-empresa-2{
+            margin-top: 100px;
+            text-align: justify;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .contenido-empresa-2 h2{
+            text-align: center;
+        }
         .swiper-container-2 {
             width: 100%;
             margin-top: 150px;
             height: 20%;
             background-color: white;
             text-align: center;
-
         }
-
         .swiper-container-2 .swiper-slide {
             text-align: center;
             font-size: 18px;
             background: #fff;
-
             /* Center slide text vertically */
             display: -webkit-box;
             display: -ms-flexbox;
@@ -168,7 +171,6 @@
             align-items: center;
         }
         .swiper-container-2 .swiper-slide .slider-box-2{
-
             height:0%;
             width:40%;
             position:relative;
@@ -179,7 +181,6 @@
             justify-content:center;
             align-items:center;
             text-align:center;
-
         }
         .swiper-container-2 .swiper-slide .slider-box-2 a{
             text-decoration:none;
@@ -191,18 +192,63 @@
             height:auto;
             max-width:100%;
             max-height:80%;}
-
         .slider-box-2:hover .img-box img{
             transform:scale(1.07);
-           }
+        }
+        .three-columns {
 
+            -webkit-column-count: 3; /* Chrome, Safari, Opera */
+            -moz-column-count: 3; /* Firefox */
+            column-count: 3;
+
+            -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+            -moz-column-gap: 20px; /* Firefox */
+            column-gap: 20px;
+
+            -webkit-column-gap: 2rem; /* Chrome, Safari, Opera */
+            -moz-column-gap: 2rem; /* Firefox */
+            column-gap: 2rem;
+
+            -webkit-column-rule: 5px solid #f6d148;  ; /* Chrome, Safari, Opera */
+            -moz-column-rule: 5px solid #f6d148;  ; /* Firefox */
+            column-rule: 5px solid #f6d148;  ;
+
+            -webkit-column-rule: 0.5rem solid #f6d148;  ; /* Chrome, Safari, Opera */
+            -moz-column-rule: 0.5rem solid #f6d148; ; /* Firefox */
+            column-rule: 0.5rem solid #f6d148; ;
+
+
+        }
         @media only screen and (max-width: 768px) {
             .swiper-container {
                 height: 400px;
             }
+            .contenido-empresa-2 {
+                height: 500px;
+            }
+
+            .three-columns {
+
+                -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                -moz-column-count: 2; /* Firefox */
+                column-count: 2;
+
+
+            }
+        }
+        @media only screen and (max-width: 420px) {
+            .contenido-empresa-2 {
+                height: 800px;
+            }
+
+            .three-columns {
+
+                -webkit-column-count: 1; /* Chrome, Safari, Opera */
+                -moz-column-count: 1; /* Firefox */
+                column-count: 1;
+            }
         }
         h2{
-
             color: #f6d148;
         }
         .content {
@@ -211,25 +257,15 @@
             padding: 0 20px;
             text-align: justify;
         }
-
-        .left {
-            float: left;
-            width: 50%;
-        }
-
-        .left .content {
-            border-right: 5px solid #f6d148  ;
-        }
-
-        .right {
-            float: right;
-            width: 50%;
+        .carousel-item img{
+            width: 20%;
         }
 
 
     </style>
 {% endblock %}
-
+</head>
+<body>
 {% block body %}
 
     <div class="w3-content w3-display-container">
@@ -251,271 +287,262 @@
     <div class="contenido-empresa">
         <h2>EMPRESA</h2>
         <p>
-            Bienvenidos a Elektro3 S.C.C.L. una empresa dedicada a la importación, distribución y exportación de productos para ferreterías, tiendas de bricolaje, electrodomésticos y jardinería. Siempre apostando por la incorporación de nuevos productos, en Elektro3 estamos siempre comprometidos a dar un servicio eficiente, rápido y de calidad a todos nuestros clientes. Muchas gracias por vuestra confianza.
+            Bienvenidos a FreeMarket. una empresa dedicada a la importación, distribución y exportación de productos para todo tipos de tiendas que quieran abrirse un hueco en la web. Siempre apostando por la incorporación de nuevos productos, en FreeMarket estamos siempre comprometidos a dar un servicio eficiente, rápido y de calidad a todos nuestros clientes. Muchas gracias por vuestra confianza.
 
-            Fue creada a finales de 1993 en Cambrils (Tarragona) en un pequeño local de 200m2 por un grupo de profesionales con gran experiencia en el sector, con la intención de ofrecer al mercado un servicio eficiente, rápido y de calidad a todos sus clientes, siendo el mejor aval de la empresa los más de 22.500 clientes y los más de 25 años de experiencia en el sector.</p>
+            Fue creada a finales de 2020 en Brea de Aragón (Zaragoza) en un pequeño local de 100m2 por un chico con experiencia en el sector, con la intención de ofrecer al mercado un servicio eficiente, rápido y de calidad a todos sus clientes, siendo el mejor aval de la empresa.</p>
     </div>
 
     {% if app.user %}
-    <!-- Slider -->
-    <div class="product-slider">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="slider-box">
-                    <div class="img-box">
-                        <img src="https://api.elektro3.com/images/products/90418.jpg">
+        <!-- Slider -->
+        <div class="product-slider">
+            <h2>Productos destacados</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider-box">
+                            <div class="img-box">
+                                <img src="https://api.elektro3.com/images/products/90418.jpg">
+                            </div>
+
+                            <p class="detail">Caja de compostaje
+
+                                <a href="#" class="price">79.95 €</a>
+                            </p>
+                            <div class="cart">
+                                <a href="{{ path('product.detail', {'id': 48}) }}">VER PRODUCTO</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <p class="detail">Caja de compostaje
 
-                        <a href="#" class="price">79.95 €</a>
-                    </p>
-                    <div class="cart">
-                        <a href="{{ path('product.detail', {'id': 48}) }}">VER PRODUCTO</a>
+
+                    <!--slide 2-------------------------------------->
+                    <div class="swiper-slide">
+                        <div class="slider-box">
+
+                            <div class="img-box">
+                                <img src="https://api.elektro3.com/images/products/08730.jpg">
+                            </div>
+
+                            <p class="detail">Batería recambio
+
+                                <a href="#" class="price">14.95 €</a>
+                            </p>
+                            <div class="cart">
+                                <a href="{{ path('product.detail', {'id': 99}) }}">VER PRODUCTO</a>
+                            </div>
+                        </div>
                     </div>
+
+
+
+
+                    <!--slide 3-------------------------------------->
+                    <div class="swiper-slide">
+                        <div class="slider-box">
+                            <div class="img-box">
+                                <img src="https://api.elektro3.com/images/products/08750.jpg ">
+                            </div>
+
+                            <p class="detail">Kit taladro percutor
+
+                                <a href="#" class="price">159.95 €</a>
+                            </p>
+                            <div class="cart">
+                                <a href="{{ path('product.detail', {'id': 113}) }}">VER PRODUCTO</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--slide 4-------------------------------------->
+                    <div class="swiper-slide">
+                        <div class="slider-box">
+                            <div class="img-box">
+                                <img src="https://api.elektro3.com/images/products/77073.jpg">
+                            </div>
+
+                            <p class="detail">Caja metálica spaguetis
+
+                                <a href="#" class="price">6.85 €</a>
+                            </p>
+                            <div class="cart">
+                                <a href="{{ path('product.detail', {'id': 5}) }}">VER PRODUCTO</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--slide 5-------------------------------------->
+                    <div class="swiper-slide">
+                        <div class="slider-box">
+                            <div class="img-box">
+                                <img src="https://api.elektro3.com/images/products/81213.jpg">
+                            </div>
+
+                            <p class="detail">Antorcha de bamboo
+
+                                <a href="#" class="price">8.99 €</a>
+                            </p>
+                            <div class="cart">
+                                <a href="{{ path('product.detail', {'id': 20}) }}">VER PRODUCTO</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--slide 6-------------------------------------->
+
+                    <div class="swiper-slide">
+                        <div class="slider-box">
+                            <div class="img-box">
+                                <img src="https://api.elektro3.com/images/products/74201.jpg">
+                            </div>
+
+                            <p class="detail">Bomba sumergible
+
+                                <a href="#" class="price">90.25 €</a>
+                            </p>
+                            <div class="cart">
+                                <a href="{{ path('product.detail', {'id': 156}) }}">VER PRODUCTO</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+                <div class="swiper-button-next" ></div>
+                <div class="swiper-button-prev"  ></div>
             </div>
 
-
-
-            <!--slide 2-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box">
-
-                    <div class="img-box">
-                        <img src="https://api.elektro3.com/images/products/08730.jpg">
-                    </div>
-
-                    <p class="detail">Batería recambio
-
-                        <a href="#" class="price">14.95 €</a>
-                    </p>
-                    <div class="cart">
-                        <a href="{{ path('product.detail', {'id': 99}) }}">VER PRODUCTO</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <!--slide 3-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box">
-                    <div class="img-box">
-                        <img src="https://api.elektro3.com/images/products/08750.jpg ">
-                    </div>
-
-                    <p class="detail">Kit taladro percutor
-
-                        <a href="#" class="price">159.95 €</a>
-                    </p>
-                    <div class="cart">
-                        <a href="{{ path('product.detail', {'id': 113}) }}">VER PRODUCTO</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <!--slide 4-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box">
-                    <div class="img-box">
-                        <img src="https://api.elektro3.com/images/products/77073.jpg">
-                    </div>
-
-                    <p class="detail">Caja metálica spaguetis
-
-                        <a href="#" class="price">6.85 €</a>
-                    </p>
-                    <div class="cart">
-                        <a href="{{ path('product.detail', {'id': 5}) }}">VER PRODUCTO</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!--slide 5-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box">
-                    <div class="img-box">
-                        <img src="https://api.elektro3.com/images/products/81213.jpg">
-                    </div>
-
-                    <p class="detail">Antorcha de bamboo
-
-                        <a href="#" class="price">8.99 €</a>
-                    </p>
-                    <div class="cart">
-                        <a href="{{ path('product.detail', {'id': 20}) }}">VER PRODUCTO</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <!--slide 6-------------------------------------->
-
-            <div class="swiper-slide">
-                <div class="slider-box">
-                    <div class="img-box">
-                        <img src="https://api.elektro3.com/images/products/74201.jpg">
-                    </div>
-
-                    <p class="detail">Bomba sumergible
-
-                        <a href="#" class="price">90.25 €</a>
-                    </p>
-                    <div class="cart">
-                        <a href="{{ path('product.detail', {'id': 156}) }}">VER PRODUCTO</a>
-                    </div>
-                </div>
-            </div>
+            <!-- Add Arrows -->
 
         </div>
-        <div class="swiper-button-next" ></div>
-        <div class="swiper-button-prev"  ></div>
+    {% endif %}
+
+    <div class="contenido-empresa-2" >
+        <div id="cabecera" style="margin-bottom: 30px; margin-top:50px">
+            <h2>¿Conectamos?</h2>
+        </div>
+        <div class="three-columns" >
+
+            <p>Ayudamos a las empresas a poder vender sus productos en el sector web, el cual a muchas empresas se les escapa, ya sea por el capital necesario o por la falta de información. Pero para eso estamos nostros aquí!</p>
+            </p>
+
+            <p>En unos pocos días podras tener un sitio web donde vender tus productos. ¿Pero como puede ser eso? pues muy fácil mediante una hoja de Excel o CSV la cual todo el mundo puede rellenar tus podructos se suben a la web, con su correspondiente página única de productos.
+            ¿Aun no te convence? por si fuera poco estos productos entran en nuestra API la cual es accesible desde otras páginas para poder realizar una conexión</p>
+            </p>
+
+            <p>Además tambíen contamos con un panel integrado para nuestros clientes donde pueden ver todos sus datos, pedidos, productos y descargar facturas. Compra productos de otros proveedores para tu tienda ya sea online o fisica y ten el control del stock de los productos. ¡Nosotros te lo ponemos fácil!</p>
+            </p>
+        </div>
+
+    </div>
+    <!-- Slider -->
+    <style>
+    .product-slider-2 .swiper-container .swiper-wrapper .swiper-slide .slider-box .img-box:hover{
+        transform: none;
+    }
+    .product-slider-2{
+        text-align: center;
+        margin-top:80px;
+    }
+</style>
+    {% if app.user %}
+    <div class="product-slider-2">
+        <h2>Nuestras Marcas</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <a href="{{ path('productos_marca', {'id': 4}) }}">
+                    <div class="slider-box">
+                        <div class="img-box">
+                            <img src={{ asset('uploads/marcas/008002019-MAG1-4268.jpeg') }}>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+
+
+                <!--slide 2-------------------------------------->
+                <div class="swiper-slide">
+                    <a href="{{ path('productos_marca', {'id': 3}) }}">
+                    <div class="slider-box">
+
+                        <div class="img-box">
+                            <img src={{ asset('uploads/marcas/LOGO-KOMA.jpg') }}>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+
+
+
+                <!--slide 3-------------------------------------->
+                <div class="swiper-slide">
+                    <a href="{{ path('productos_marca', {'id': 2}) }}">
+                    <div class="slider-box">
+                        <div class="img-box">
+                            <img src={{ asset('uploads/marcas/Logo-Progarden.jpg') }}>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+
+
+
+                <!--slide 4-------------------------------------->
+                <div class="swiper-slide">
+                    <a href="{{ path('productos_marca', {'id': 5}) }}">
+                    <div class="slider-box">
+                        <div class="img-box">
+                            <img src={{ asset('uploads/marcas/mica-inverted.png') }}>
+                        </div>
+
+                    </div>
+                    </a>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="swiper-button-next" ></div>
+            <div class="swiper-button-prev"  ></div>
         </div>
 
         <!-- Add Arrows -->
 
     </div>
-{% endif %}
 
-    <div class="contenido-empresa" style="height: 300px">
-        <div id="cabecera" style="margin-bottom: 30px">
-            <h2>¿Conectamos?</h2>
-        </div>
-        <div class="left">
-            <div class="content">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum </p>
-            </div>
-        </div>
-        <div class="right">
-            <div class="content">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum </p>
-            </div>
-        </div>
-
-
-    </div>
-    <!-- Swiper JS -->
-    {% if app.user %}
-    <div class="swiper-container-2" >
-        <h2>Nustras Marcas</h2>
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <div class="slider-box-2">
-                    <div class="img-box">
-                        <img src="{{ asset('uploads/marcas/LOGO-KOMA.jpg ') }}">
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!--slide 2-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box-2">
-
-                    <div class="img-box">
-                        <a href="https://comaranda.com/">
-                            <img src="https://1000marcas.net/wp-content/uploads/2020/01/Bosch-Logo.png">
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-            <!--slide 3-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box-2">
-                    <div class="img-box">
-                        <img src="https://www.grupoelectrostocks.com/images/marcas/1584534386ceys-01.png">
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-            <!--slide 4-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box-2">
-                    <div class="img-box">
-                        <img src="{{ asset('uploads/marcas/Logo-Progarden.jpg ') }}">
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <!--slide 5-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box-2">
-                    <div class="img-box">
-                        <img src="{{ asset('uploads/marcas/mica-inverted.png') }}">
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-            <!--slide 6-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box-2">
-                    <div class="img-box">
-                        <img src="https://seeklogo.com/images/R/rubi-logo-A333EFA6B2-seeklogo.com.png">
-                    </div>
-                </div>
-            </div>
-
-            <!--slide 7-------------------------------------->
-            <div class="swiper-slide">
-                <div class="slider-box-2">
-                    <div class="img-box">
-                        <img src="https://www.placo.es/sites/gypsum.eeap.placo.es/files/styles/90y/public/saint-gobain-placo.png?itok=h-Q9hei0">
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-    </div>
     {% endif %}
 
 {% endblock %}
+</body>
+</html>
 {% include 'footer.html.twig' %}
    {% block javascripts %}
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
        <script>
            var slideIndex = 1;
            showDivs(slideIndex);
-
            function plusDivs(n) {
                showDivs(slideIndex += n);
            }
-
            function currentDiv(n) {
                showDivs(slideIndex = n);
            }
-
            function showDivs(n) {
                var i;
                var x = document.getElementsByClassName("mySlides");
@@ -531,9 +558,7 @@
                x[slideIndex-1].style.display = "block";
                dots[slideIndex-1].className += " w3-white";
            }
-
            <!-- PRODUCTOS SLIDER -->
-
            var swiper = new Swiper('.swiper-container', {
                slidesPerView: 4,
                spaceBetween: 30,
@@ -548,12 +573,10 @@
                    nextEl: '.swiper-button-next',
                    prevEl: '.swiper-button-prev',
                },breakpoints: {
-
                    100: {
                        slidesPerView: 1,
                        spaceBetween: 5,
                    },
-
                    350: {
                        slidesPerView: 1,
                        spaceBetween: 10,
@@ -565,7 +588,6 @@
                    750: {
                        slidesPerView: 3,
                        spaceBetween: 30,
-
                    },
                    1000: {
                        slidesPerView: 4,
@@ -576,13 +598,11 @@
                        spaceBetween: 40,
                    }
                },
-
            });
        </script>
        <!-- Initialize Swiper -->
        <script>
            var swiper = new Swiper('.swiper-container-2', {
-
                spaceBetween: 100,
                slidesPerView: 6,
                spaceBetween: 0,
@@ -598,12 +618,10 @@
                    nextEl: '.swiper-button-next',
                    prevEl: '.swiper-button-prev',
                },breakpoints: {
-
                    100: {
                        slidesPerView: 1,
                        spaceBetween: 5,
                    },
-
                    350: {
                        slidesPerView: 1,
                        spaceBetween: 10,
@@ -615,7 +633,6 @@
                    750: {
                        slidesPerView: 3,
                        spaceBetween: 30,
-
                    },
                    1000: {
                        slidesPerView: 4,
@@ -626,7 +643,6 @@
                        spaceBetween: 40,
                    }
                },
-
            });
        </script>
    {% endblock %}

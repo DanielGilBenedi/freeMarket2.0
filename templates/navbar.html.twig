@@ -323,6 +323,24 @@
             position: relative;
             margin-left: 70%;
         }
+        @media screen and (max-width: 400px) {
+            .logo{
+                margin-left: 90px;
+            }
+            .autocomplete{
+                width:90%;
+                margin-right:10%;
+            }
+            .item-inicio{
+                margin-left: 42%;
+            }
+            #catalogo, #categorias, #marcas{
+                padding-left:0px;
+            }
+            #carrito{
+                margin-left:0px;
+            }
+        }
     </style>
 {% endblock %}
 {% block body %}
@@ -356,7 +374,9 @@
 
                 <li class="item-inicio"><a href="{{ path('app_login') }}">Entrar</a></li>
             {% endif %}
+            {% if app.user %}
             <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            {% endif %}
         </ul>
         {% if app.user %}
         <div class="search-container">

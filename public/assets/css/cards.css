@@ -19,6 +19,11 @@
     max-width: 100%;
     vertical-align: middle;
 }
+.card_image-2 {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
 
 
 
@@ -54,15 +59,27 @@
     display: flex;
     padding: 1rem;
 }
+.cards_item_marca{
+    display: flex;
+    padding: 1rem;
+
+
+}
 
 @media (min-width: 40rem) {
     .cards_item {
+        width: 50%;
+    }
+    .cards_item_marca{
         width: 50%;
     }
 }
 
 @media (min-width: 56rem) {
     .cards_item {
+        width: 25%;
+    }
+    .cards_item_marca{
         width: 25%;
     }
 }
@@ -128,3 +145,4 @@
     text-decoration: none;
     color: black;
 }
+

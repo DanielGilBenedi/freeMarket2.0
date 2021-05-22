@@ -36,4 +36,10 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/productos, roles: [ROLE_USER,ROLE_ADMIN] }
+         - { path: ^/marcas, roles: [ROLE_USER,ROLE_ADMIN] }
+         - { path: ^/categorias, roles: [ROLE_USER,ROLE_ADMIN] }
+         - { path: ^/user, roles: [ROLE_USER,ROLE_ADMIN] }
+         - { path: ^/userPanelPedidos, roles: [ROLE_USER,ROLE_ADMIN] }
+
         # - { path: ^/user, roles: ROLE_NO_ACCESS }

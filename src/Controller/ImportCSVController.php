@@ -10,8 +10,10 @@ use App\Form\MasiveImportType;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -98,7 +100,6 @@ class ImportCSVController extends AbstractController
                 //subirlos a la base de datos con el ID referenciado
 
                 //dump($product);
-
 
 
                 $fileSystem = new Filesystem();

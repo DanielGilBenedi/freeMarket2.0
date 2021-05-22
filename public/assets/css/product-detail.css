@@ -145,3 +145,24 @@ input[type=number] {
 #add_to_cart_Comprar:hover{
     background-color: rgba(255, 255, 255, 0.12);
 }
+
+@media screen and (max-width: 1200px) {
+    .div-rigth{
+        display: block;
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    .div-img img {
+        width: 100%;
+    }
+    .div-left{
+        display: block;
+        float: none;
+
+        width: 100%;
+    }
+    #add_to_cart_Comprar{
+        margin-bottom:40px;
+    }
+}

@@ -13,10 +13,10 @@
 
         {% for marca in marcas %}
 
-            <li class="cards_item">
+            <li class="cards_item_marca">
                 <a href="{{ path('productos_marca', {'id': marca.id}) }}">
                 <div class="card">
-                    <div class="card_image"><img src="/uploads/marcas/{{ marca.imagen }}"></div>
+                    <div class="card_image-2"><img width="200px" height="150px" src="/uploads/marcas/{{ marca.imagen }}"></div>
 
                 </div>
                 </a>

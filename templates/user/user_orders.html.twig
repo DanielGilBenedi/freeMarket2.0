@@ -11,6 +11,7 @@
     </style>
 {% endblock %}
 {% block body %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <div  class="main-container">
 <table class="table">
     <thead>
@@ -25,11 +26,11 @@
     <tbody>
     {% for orders in order %}
         <tr>
-            <td>{{ orders.id }}</td>
+            <td>Nº {{ orders.id }}</td>
             <td>{{ orders.createdAt ? orders.createdAt|date('Y-m-d') : '' }}</td>
 
 
-            <td>{{ orders.getTotal() }}</td>
+            <td>{{ orders.getTotal() }} €</td>
             <td><button class="btn-more"><a href="{{ path('order_details', {'id': orders.id}) }}">Detalles</a></button></td>
             <td><button class="btn-more"><a href="{{ path('generar_pdf', {'id': orders.id}) }}">Generar PDF</a></button></td>
         </tr>
@@ -43,3 +44,4 @@
 </table>
     </div>
 {% endblock %}
+{% include 'footer.html.twig' %}
