@@ -14,7 +14,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96d0ea1-b2f2-4831-a4a8-28fda0dca306" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/freeMarket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/freeMarket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GeneratePdfController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GeneratePdfController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +165,10 @@
       <path value="$PROJECT_DIR$/vendor/algolia/search-bundle" />
       <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
     </include_path>
   </component>
   <component name="ProjectId" id="1qRHKdyt96DY36ldwiaQnZ5QJFJ" />
@@ -227,7 +237,7 @@
       <workItem from="1621183731252" duration="30476000" />
       <workItem from="1621440616563" duration="12229000" />
       <workItem from="1621533037470" duration="18519000" />
-      <workItem from="1621758833189" duration="14615000" />
+      <workItem from="1621758833189" duration="15077000" />
     </task>
     <servers />
   </component>
