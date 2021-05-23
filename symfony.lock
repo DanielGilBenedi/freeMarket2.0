@@ -157,6 +157,9 @@
     "monolog/monolog": {
         "version": "2.2.0"
     },
+    "mpdf/mpdf": {
+        "version": "v6.0.0"
+    },
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
@@ -201,6 +204,9 @@
     },
     "sabberworm/php-css-parser": {
         "version": "8.3.1"
+    },
+    "sasedev/mpdf-bundle": {
+        "version": "2.0.0"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",

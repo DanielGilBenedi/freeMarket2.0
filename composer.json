@@ -21,6 +21,7 @@
         "knplabs/knp-snappy-bundle": "^1.8",
         "phpdocumentor/reflection-docblock": "^5.2",
         "royopa/fpdf-symfony2": "^4.0",
+        "sasedev/mpdf-bundle": "^2.0",
         "sensio/framework-extra-bundle": "^5.1",
         "specshaper/encrypt-bundle": "dev-master",
         "stripe/stripe-php": "^7.77",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5efa16079bdd39980ecd4811ece7d2f9",
+    "content-hash": "a71a3adbfb1716ac2df7a60b5e324d9a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2623,6 +2623,53 @@
             "time": "2020-12-14T13:15:25+00:00"
         },
         {
+            "name": "mpdf/mpdf",
+            "version": "v6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpdf/mpdf.git",
+                "reference": "a15743d030ce3b5b7be36c6e83f76589b27c3f2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/a15743d030ce3b5b7be36c6e83f76589b27c3f2c",
+                "reference": "a15743d030ce3b5b7be36c6e83f76589b27c3f2c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=4.3.10"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "mpdf.php",
+                    "classes"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-1.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Ian Back"
+                }
+            ],
+            "description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support",
+            "homepage": "http://www.mpdf1.com/mpdf/index.php",
+            "keywords": [
+                "pdf",
+                "php",
+                "utf-8"
+            ],
+            "support": {
+                "issues": "https://github.com/mpdf/mpdf/issues",
+                "source": "https://github.com/mpdf/mpdf/tree/v6.0.0"
+            },
+            "time": "2015-03-01T10:27:49+00:00"
+        },
+        {
             "name": "nikic/php-parser",
             "version": "v4.10.4",
             "source": {
@@ -3368,6 +3415,63 @@
                 "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.3.1"
             },
             "time": "2020-06-01T09:10:00+00:00"
+        },
+        {
+            "name": "sasedev/mpdf-bundle",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sasedev/mpdf-bundle.git",
+                "reference": "fd4632de46905e22afcdd8917ae7bc9f15734bec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sasedev/mpdf-bundle/zipball/fd4632de46905e22afcdd8917ae7bc9f15734bec",
+                "reference": "fd4632de46905e22afcdd8917ae7bc9f15734bec",
+                "shasum": ""
+            },
+            "require": {
+                "mpdf/mpdf": "*",
+                "php": ">=7.2",
+                "symfony/config": "^5.1",
+                "symfony/dependency-injection": "^5.1",
+                "symfony/http-kernel": "^5.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SALAH Abdelkadeur Seifeddine",
+                    "email": "sinus@sasedev.net",
+                    "homepage": "https://sasedev.net"
+                }
+            ],
+            "description": "Mpdf for Symfony (5.1)",
+            "homepage": "https://github.com/sasedev/mpdf-bundle",
+            "keywords": [
+                "mpdf",
+                "sasedev",
+                "symfony"
+            ],
+            "support": {
+                "email": "sinus@sasedev.net",
+                "issues": "https://github.com/mpdf-bundle/issues",
+                "source": "https://github.com/sasedev/mpdf-bundle/tree/master"
+            },
+            "time": "2020-08-25T09:46:20+00:00"
         },
         {
             "name": "sensio/framework-extra-bundle",
