@@ -91,7 +91,7 @@ class ImportCSVController extends AbstractController
                         $entityManager->flush();
                         $entityManager->clear();
 
-
+                        dump($producto);
                     }
 
                 }
@@ -99,7 +99,7 @@ class ImportCSVController extends AbstractController
                 //Llamamos a Categorias para obtener el nombre----queda hacer la relación con los campos para
                 //subirlos a la base de datos con el ID referenciado
 
-                //dump($product);
+
 
 
                 $fileSystem = new Filesystem();
