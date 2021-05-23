@@ -167,8 +167,11 @@ class DashboardUserController extends AbstractController
             $filename = "pedido$idOrder.pdf";
             return new PdfResponse(
                 $pdf->getOutputFromHtml($html),
-                $filename
+                $filename,
+               $this->redirectToRoute('user_index')
             );
+
+
         }
 
 }
