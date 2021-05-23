@@ -14,29 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96d0ea1-b2f2-4831-a4a8-28fda0dca306" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/freeMarket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/freeMarket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/cards.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/product-detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/CSV/CeysyFotos.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/CSV/geolite-10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/OrderCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/OrderCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/OrderItemCrudController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ImportCSVController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ImportCSVController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Manager/CartManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/CartManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categorias/product_colection.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorias/product_colection.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/marcas/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marcas/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/marcas/product_colection.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marcas/product_colection.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/principal/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/principal/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/productos/carga_masiva.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/productos/carga_masiva.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/productos/detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/productos/detail.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/productos/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/productos/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/order_detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/order_detail.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/user_orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/user_orders.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +162,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/algolia/search-bundle" />
       <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
     </include_path>
   </component>
   <component name="ProjectId" id="1qRHKdyt96DY36ldwiaQnZ5QJFJ" />
@@ -248,6 +231,7 @@
       <workItem from="1621183731252" duration="30476000" />
       <workItem from="1621440616563" duration="12229000" />
       <workItem from="1621533037470" duration="18519000" />
+      <workItem from="1621758833189" duration="430000" />
     </task>
     <servers />
   </component>

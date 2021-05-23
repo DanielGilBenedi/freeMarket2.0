@@ -1,0 +1,1000 @@
+  480  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  481  composer
+  482  nodejs -v
+  483  sudo apt install nodejs
+  484  wget https://get.symfony.com/cli/installer -O - | bash
+  485  mv /home/daniel/.symfony/bin/symfony /usr/local/bin/symfony
+  486  sudo mv /home/daniel/.symfony/bin/symfony /usr/local/bin/symfony
+  487  symfony
+  488  composer create-project symfony/website-skeleton proyectoFinal
+  489  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  490  sudo apt update && sudo apt install yarn
+  491  yarn --version
+  492  sudo apt install cmdtest
+  493  yarn --version
+  494  composer create-project symfony/website-skeleton proyectoFinalDani
+  495  cd proyectoFinalDani/
+  496  symfony server:start
+  497  cd ..
+  498  sudo mkdir pruebaSymfony
+  499  cd pruebaSymfony/
+  500  composer create-project symfony/website-skeleton proyectoFinalDani ^5.*
+  501  composer create-project symfony/website-skeleton proyectoFinalDani "^5.*"
+  502  composer create-project symfony/website-skeleton proyecto 
+  503  sudo composer create-project symfony/website-skeleton proyecto 
+  504  php --ini
+  505  ls
+  506  ls -l
+  507  cd proyecto/
+  508  ls
+  509  cd vendor
+  510  ls
+  511  cd symfony
+  512  ls
+  513  cd flex
+  514  ls
+  515  cd src
+  516  ls
+  517  c..
+  518  cd ..
+  519  $ composer create-project symfony/symfony-demo my_project
+  520  cd my_project/
+  521  symfony serve
+  522  yarn add --dev react react-dom prop-types babel-preset-react
+  523  yarn options
+  524  yarn -v
+  525  yarn
+  526  yarn add react react-dom prop-types babel-preset-react
+  527  npm install -g yarn
+  528  sudo apt install npm
+  529  composer require symfony/webpack-encore-bundle
+  530  yarn install
+  531  yarn
+  532  yarn install
+  533  yarn install --force
+  534  npm install
+  535  yarn add --dev react react-dom prop-types babel-preset-react
+  536  yarn add @babel/preset-react --dev
+  537  yarn --version
+  538  yarn add @babel/preset-react
+  539  yarn install
+  540  yarn --cwd
+  541  yarn
+  542  yarn --version
+  543  yarn add react react-dom prop-types
+  544  yarn add --dev react react-dom prop-types babel-preset-react
+  545  yarn options
+  546  yarn --options
+  547  yarn --add --dev react react-dom prop-types babel-preset-react
+  548  yarn add @babel/preset-react --dev
+  549  yarn install
+  550  composer require symfony/webpack-encore-bundle
+  551  yarn install --force
+  552  yarn add @babel/preset-react --dev
+  553  yarn add react-router-dom
+  554  yarn add --dev react react-dom prop-types axios
+  555  yarn add @babel/plugin-proposal-class-properties @babel/plugin-transform-runtime
+  556  yarn
+  557  yarn install
+  558  sudo apt remove cmdtest
+  559  sudo apt remove yarn
+  560  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  561  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  562  sudo apt-get update
+  563  sudo apt-get install yarn -y
+  564  yarn
+  565  yarn install
+  566  cd ..
+  567  cd opt/lampp
+  568  ls
+  569  sudo ./manager-linux-x64.run
+  570  cd..
+  571  cd ..
+  572  ls
+  573  cd opt/lampp/htdocs
+  574  ls
+  575  cd conexion_API/
+  576  ls
+  577  cd Automatizacion/
+  578  ls
+  579  ls -l
+  580  sudo chmod 777 index.php
+  581  sudo chmod 777 subida.csv 
+  582  ls -l
+  583  ls
+  584  cd Escritorio/
+  585  ls
+  586  git clone https://github.com/alanbel9/webInternalBusinessChat.git
+  587  ls
+  588  cd webInternalBusinessChat/
+  589  ls
+  590  cd proyChatSymfony/
+  591  ls
+  592  composer install
+  593  composer update
+  594  symfony server:start
+  595  cd ..
+  596  ls
+  597  cd opt/lampp
+  598  ls
+  599  cd htdocs
+  600  ls
+  601  cd pruebaSymfony/
+  602  ls
+  603  cd proyecto/
+  604  ls
+  605  cd ..
+  606  ProyectoFinal/
+  607  ls
+  608  cd ProyectoFinal/
+  609  ls
+  610  cd my_project/
+  611  ls
+  612  symfony server:start
+  613  ls
+  614  cd ..
+  615  ls
+  616  opt/lampp
+  617  cd opt/lampp
+  618  ls
+  619  sudo ./manager-linux-x64.run
+  620  php -v
+  621  cd ..
+  622  cd ,,
+  623  cd ..
+  624  ls
+  625  cd ..
+  626  ls
+  627  cd opt/lampp
+  628  ls
+  629  sudo ./manager-linux-x64.run
+  630  locate php.ini
+  631  ls -l
+  632  sudo chmod 777 faltan.csv 
+  633  cd ..
+  634  cd opt/lampp/htdocs
+  635  ls
+  636  cd conexion_API/Automatizacion/
+  637  ls
+  638  ls -l
+  639  sudo chmod 777 faltan.csv 
+  640  ls -l
+  641  ls
+  642  sudo ./manager-linux-x64.run
+  643  exit
+  644  sudo snap install insomnia-designer
+  645  composer require symfony/orm-pack
+  646  composer require annotations
+  647  bin/console make:entity
+  648  php bin/console make:migration
+  649  bin/console make:migration
+  650  sudo apt-get install php-mysql
+  651  bin/console make:migration
+  652  bin/console doctrine:migrations:migrate
+  653  symfony server:start
+  654  composer require anotations
+  655  composer require annotations
+  656  composer recipes
+  657  symfony server:start
+  658  php bin/console server:run
+  659  symfony server:start
+  660  sudo snap install insomnia
+  661  curl --location --request GET 'http://127.0.0.1:8000/api/pets'
+  662  curl --location --request POST 'http://127.0.0.1:8000/api/a' --header 'Content-Type: application/json' --data-raw '{
+  663      "fecha": "12-09-2020",
+  664      "nombre": "dani",
+  665      "apellido": "gil",
+  666      "correo": "daniel.gil.benedi@gmail.com",
+  667      "telefono": "671766699"
+  668  }'
+  669  curl --curl --location --request POST 'http://127.0.0.1:8000/api/a' --header 'Content-Type: application/json' --data-raw '{"nombre": "dani","apellido": "gil","correo": "daniel.gil.benedi@gmail.com","telefono": "671766699"}'
+  670  curl --location --request POST 'http://127.0.0.1:8000/api/a' --header 'Content-Type: application/json' --data-raw '{
+  671      
+  672      "nombre": "dani",
+  673      "apellido": "gil",
+  674      "correo": "daniel.gil.benedi@gmail.com",
+  675      "telefono": "671766699"
+  676  }'
+  677  curl --location --request POST 'http://127.0.0.1:8000/api/a' --header 'Content-Type: application/json' --data-raw '{
+  678      
+  679      "nombre": "dani",
+  680      "apellido": "gil",
+  681      "correo": "daniel.gil.benedi@gmail.com",
+  682      "telefono": "671766699"
+  683  }'
+  684  ls
+  685  sudo ./manager-linux-x64.run
+  686  cd ..
+  687  cd opt/lampp
+  688  ls
+  689  sudo ./manager-linux-x64.run
+  690  sudo chmod 777 index.html 
+  691  suod ./webstorm.sh
+  692  sudo ./webstorm.sh
+  693  jfc -v
+  694  gcc -v
+  695  cd ..
+  696  cd opt/lampp/htdocs
+  697  ls
+  698  mkdir Daniel_Gil_RA4_ES
+  699  sudo chmod 777 -R Daniel_Gil_RA4_ES/
+  700  ls -l
+  701  cd ..
+  702  curl --location --request GET 'http://127.0.0.1:8000/api/pets'
+  703  curl --location --request POST 'http://127.0.0.1:8000/api/a' --header 'Content-Type: application/json' --data-raw '{
+  704      "fecha": "12-09-2020",
+  705      "nombre": "manu",
+  706      "apellido": "guiu",
+  707      "correo": "daniel.gil.benedi@gmail.com",
+  708      "telefono": "671766699"
+  709  }'
+  710  cd ..
+  711  ls
+  712  cd opt/lampp
+  713  ls
+  714  sudo ./manager-linux-x64.run
+  715  cd ..
+  716  cd opt/lampp
+  717  ls
+  718  sudo ./manager-linux-x64.run
+  719  sudo apt install proftpd
+  720  proftp -v
+  721  proftpd -v
+  722  clear
+  723  ls
+  724  cd ..
+  725  ls
+  726  mkdir /home/ftp
+  727  sudo mkdir /home/ftp
+  728  sudo chmod 755 -R /home/ftp/
+  729  ls -l
+  730  cd home
+  731  ls -l
+  732  cd ..
+  733  ls
+  734  cd etc/proftpd/
+  735  ls
+  736  sudo nano proftpd.conf 
+  737  sudo service proftpd restart
+  738  sudo service proftpd status
+  739  sudo nano proftpd.conf 
+  740  sudo service proftpd restart
+  741  sudo nano proftpd.conf 
+  742  sudo service proftpd restart
+  743  sudo nano proftpd.conf 
+  744  sudo service proftpd restart
+  745  ipadress
+  746  ip address
+  747  ls
+  748  sudo nano proftpd.conf 
+  749  cd ..
+  750  sudo echo "/bin/false" >> /etc/shells
+  751  sudo su
+  752  cd ..
+  753  ls
+  754  sudo ./manager-linux-x64.run
+  755  l
+  756  ls
+  757  cd opt/lampp
+  758  ls
+  759  sudo ./manager-linux-x64.run
+  760  sudo su
+  761  ssh
+  762  ssh-keygen
+  763  ls -al .ssh/
+  764  nano .ssh/id_rsa
+  765  ssh c01@192.168.203.69
+  766  ifconfig
+  767  ipconfig
+  768  sudo apt install net-tools
+  769  ping 8.8.8.8
+  770  sudo apt install net-tools
+  771  ifconfig
+  772  ssh c01@192.168.203.69
+  773  ls .ssh/
+  774  ssh dani@192.168.203.69
+  775  sudo su
+  776  ssh-copy-id -i ~/.ssh/id_rsa.pub dani@192.168.203.69
+  777  ssh dani@192.168.203.69
+  778  ls
+  779  sudo ./manger-linux-x64.run
+  780  sudo ./manager-linux-x64.run
+  781  ssh 192.168.203.69
+  782  ssh dani@192.168.203.69
+  783  sudo nano /etc/hosts
+  784  ssh dani@dani.com
+  785  ssh manu@192.168.203.69
+  786  sudo ssh manu@192.168.203.69
+  787  sudo ssh dani@
+  788  ls
+  789  openssl req -x509 -newkey rsa:2048   -keyout /etc/ssl/private/proftpd.key -out /etc/ssl/certs/proftpd.crt  -nodes -days 365
+  790  sudo openssl req -x509 -newkey rsa:2048   -keyout /etc/ssl/private/proftpd.key -out /etc/ssl/certs/proftpd.crt  -nodes -days 365
+  791  sudo chmod 0600 /etc/ssl/private/proftpd.key
+  792  chmod 0640 /etc/ssl/private/proftpd.key
+  793  sudo chmod 0640 /etc/ssl/private/proftpd.key
+  794  ls
+  795  cd ..
+  796  ls
+  797  cd etc/
+  798  ls
+  799  cd..
+  800  cd ..
+  801  ls
+  802  cd home/ftp/
+  803  ls
+  804  cd ..
+  805  cd home/ftp/
+  806  ls -l
+  807  cd ..
+  808  cd etc/proftpd/
+  809  ls
+  810  nano proftpd.conf 
+  811  sudo nano proftpd.conf 
+  812  sudo nano tls.conf 
+  813  sudo tail -20 /var/log/proftpd/proftpd.log
+  814  cd ..
+  815  ls
+  816  cd opt/lampp
+  817  ls
+  818  sudo ./manager-linux-x64.run
+  819  sudo su
+  820  ls -l
+  821  ls -a
+  822  nano .env
+  823  nano .gitignore
+  824  cd ..
+  825  ls
+  826  cd etc/proftpd/
+  827  ls
+  828  nano proftpd.conf 
+  829  cd ..
+  830  ls
+  831  cd opt/lampp/
+  832  ls
+  833  sudo ./manager-linux-x64.run
+  834  ls
+  835  sudo service proftpd status
+  836  ipconfig
+  837  ifconfig
+  838  sudo service proftpd restart
+  839  ls
+  840  cd ..
+  841  ls
+  842  cd opt/lampp/
+  843  ls
+  844  sudo ./manager-linux-x64.run
+  845  exit
+  846  ls
+  847  sudo ./filezilla
+  848  ls
+  849  cd ..
+  850  ls
+  851  cd ftp
+  852  ls
+  853  cd ..
+  854  ls
+  855  cd etc/proftpd/
+  856  ls
+  857  sudo nano proftpd.conf 
+  858  sudo service proftpd restart 
+  859  ipconfig
+  860  ifconfig
+  861  sudo service proftpd status
+  862  ifconfig
+  863  ls
+  864  cd ..
+  865  ls
+  866  cd opt/lampp/htdocs/
+  867  ls
+  868  ProyectoFinal/
+  869  cd ProyectoFinal/
+  870  curl --location --request POST 'http://127.0.0.1:8000/api/a' --header 'Content-Type: application/json' --data-raw '{
+  871      "fecha": "12-09-2020",
+  872      "nombre": "dani",
+  873      "apellido": "gil",
+  874      "correo": "daniel.gil.benedi@gmail.com",
+  875      "telefono": "671766699"
+  876  curl --location --request POST 'http://127.0.0.1:8000/api/a' --header 'Content-Type: application/json' --data-raw '{
+  877    
+  878      "nombre": "carlos",
+  879      "apellido": "gil",
+  880      "correo": "daniel.gil.benedi@gmail.com",
+  881      "telefono": "671766699"
+  882  }'
+  883  curl --location --request GET 'http://127.0.0.1:8000/api/pets'
+  884  symfony console list make
+  885  symfony server:start
+  886  symfony server:ca:install
+  887  symfony server:start
+  888  apt install libnss3-tools
+  889  sudo apt install libnss3-tools
+  890  symfony server:ca:install
+  891  symfony server:start
+  892  symfony console list make
+  893  cd my_project/
+  894  symfony console list make
+  895  symfony console make:controller LoginController
+  896  symfony server:start
+  897  symfony console make:controller RegistroController
+  898  symfony server:start
+  899  symfony make:registration-form
+  900  composer require symfony/form
+  901  symfony make:registration-form
+  902  make:registration-form
+  903  composer require symfony/maker-bundle --dev
+  904  symfony make:registration-form
+  905  symfony --version
+  906  symfony book:checkout
+  907  php bin/console make:user
+  908  php bin/console make:registration-form
+  909  symfony server:start
+  910  composer require symfonycasts/verify-email-bundle  
+  911  symfony server:start
+  912  php bin/console make:migration
+  913  php bin/console doctrine:migrations:migrate
+  914  symfony server:start
+  915  composer require symfony/google-mailer
+  916  symfony server:start
+  917  cd ..
+  918  ls
+  919  sudo ./manager-linux-x64.run
+  920  sudo mkdir ofertasComAranda
+  921  ls
+  922  cd ..
+  923  ls
+  924  cd opt/lampp
+  925  ls
+  926  cd htdocs
+  927  ls
+  928  sudo chmod -777 bcit-ci-CodeIgniter-b73eb19/
+  929  sudo chmod -777 -R bcit-ci-CodeIgniter-b73eb19/
+  930  ls -l
+  931  sudo chmod -777 bcit-ci-CodeIgniter-b73eb19/
+  932  ls -l
+  933  sudo chmod -R 777 bcit-ci-CodeIgniter-b73eb19/
+  934  ls -l
+  935  sudo ./manager-linux-x64.run
+  936  ping 192.168.202.79
+  937  ls
+  938  cd ..
+  939  ls
+  940  cd opt/lampp/htdocs
+  941  ls
+  942  sudo nano index.php
+  943  cd .
+  944  cd ..
+  945  ls
+  946  cd opt/lampp/htdocs/
+  947  l
+  948  ls
+  949  cd codeIgniter_Daniel_Gil/
+  950  ls -l
+  951  cd application/
+  952  ls
+  953  ls -l
+  954  cd views/
+  955  ls -l
+  956  sudo chmod 777 registro.php 
+  957  ls -l
+  958  cd ..
+  959  cd controllers/
+  960  ls -l
+  961  sudo chmod 777 RegistroController.php 
+  962  ls -l
+  963  ls
+  964  sudo ./manager-linux-x64.run
+  965  ls
+  966  sudo ./manager-linux-x64.run
+  967  ls
+  968  sudo ./manager-linux-x64.run
+  969  cd ..
+  970  opt/lampp/
+  971  cd opt/lampp/
+  972  ls
+  973  ls -l
+  974  clear
+  975  ll
+  976  ls
+  977  cd htdocs
+  978  ls
+  979  ls
+  980  sudo ./manager-linux-x64.run
+  981  ls
+  982  sudo ./manager-linux-x64.run
+  983  apt update
+  984  sudo apt update
+  985  sudo apt install openjdk-11-jdk
+  986  apt-get install software-properties-common
+  987  sudo apt-get install software-properties-common
+  988  apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main' 
+  989  sudo apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main' 
+  990  apt-get update
+  991  sudo apt-get update
+  992  sudo apt install tomcat8
+  993  sudo apt-get update
+  994  sudo apt install tomcat8
+  995  sudo apt-get install software-properties-common
+  996  sudo apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main' 
+  997  sudo apt install tomcat8
+  998  sudo apt-cache search tomcat
+  999  sudo apt install tomcat9 tomcat9-admin
+ 1000  ss -ltn
+ 1001  sudo ufw allow from any to any port 8080 proto tcp
+ 1002  sudo nano /etc/tomcat9/tomcat-users.xml
+ 1003  sudo systemctl restart tomcat9
+ 1004  sudo nano /etc/tomcat9/tomcat-users.xml
+ 1005  sudo systemctl restart tomcat9
+ 1006  sudo nano /etc/tomcat9/tomcat-users.xml
+ 1007  sudo systemctl restart tomcat9
+ 1008  sudo nano /etc/tomcat9/tomcat-users.xml
+ 1009  sudo systemctl restart tomcat9
+ 1010  sudo nano /etc/tomcat9/tomcat-users.xml
+ 1011  sudo systemctl restart tomcat9
+ 1012  sudo nano /etc/tomcat9/tomcat-users.xml
+ 1013  apt install tomcat8-docs tomcat8-examples tomcat8-admin
+ 1014  sudo apt install tomcat8-docs tomcat8-examples tomcat8-admin
+ 1015  sudo apt install tomcat9-docs tomcat9-examples tomcat9-admin
+ 1016  sudo systemctl restart tomcat9
+ 1017  ls
+ 1018  cd Descargas/
+ 1019  ls
+ 1020  cd ..
+ 1021  ls
+ 1022  cd ..
+ 1023  ls
+ 1024  cd ..
+ 1025  ls
+ 1026  cd usr/share/tomcat9
+ 1027  sudo ln -s /var/lib/tomcat9/conf conf
+ 1028  sudo ln -s /var/log/tomcat9 log
+ 1029  sudo ln -s /etc/tomcat9/policy.d/03catalina.policy conf/catalina.policy
+ 1030  sudo chmod -R +r/usr/share/tomcat9
+ 1031  sudo chmod -R +r /usr/share/tomcat9
+ 1032  ls -l
+ 1033  sudo service tomcat9 stop
+ 1034  ls
+ 1035  cd conf
+ 1036  ls -l
+ 1037  cs ..
+ 1038  cd ..
+ 1039  sudo chmod -R +r /usr/share/tomcat9/conf
+ 1040  cd conf
+ 1041  ls -l
+ 1042  sudo service tomcat9 stop
+ 1043  sudo service tomcat9 start
+ 1044  sudo service tomcat9 stop
+ 1045  sudo service tomcat9 restart
+ 1046  sudo service tomcat9 status
+ 1047  ls
+ 1048  sudo nano tomcat-users.xml 
+ 1049  ls -l
+ 1050  ls
+ 1051  sudo ./manager-linux-x64.run
+ 1052  ls
+ 1053  sudo ./manager-linux-x64.run
+ 1054  ls -l
+ 1055  sudo nano conf
+ 1056  cd conf
+ 1057  ls
+ 1058  cd ..
+ 1059  ls
+ 1060  cd conf
+ 1061  ls
+ 1062  sudo nano tomcat-users.xml
+ 1063  server tomcat restart
+ 1064  sudo service tomcat restart
+ 1065  sudo tomcat restart
+ 1066  sudo nano server.xml 
+ 1067  sudo nano tomcat-users.xml
+ 1068  sudo nano server.xml 
+ 1069  sudo service tomcat restart
+ 1070  sudo service tomcat9 restart
+ 1071  sudo nano tomcat-users.xml
+ 1072  ls
+ 1073  sudo ./Apache-NetBeans-12.0-bin-linux-x64.sh
+ 1074  sudo Apache-NetBeans-12.0-bin-linux-x64.sh
+ 1075  sudo sh Apache-NetBeans-12.0-bin-linux-x64.sh
+ 1076  sudo ./manager-linux-x64.run
+ 1077  sudo service apache status
+ 1078  sudo service apache2 status
+ 1079  sudo service httpd status
+ 1080  sudo lsof -i -P -n
+ 1081  sudo lsof -i -P -n | grep 8085
+ 1082  sudo lsof -i -P -n | grep 8084
+ 1083  sudo lsof -i -P -n | grep 8080
+ 1084  sudo lsof -i -P -n | grep 8081
+ 1085  sudo tomcat09 status
+ 1086  sudo sytemctl tomcat09 status
+ 1087  sudo systemctl tomcat9  status
+ 1088  sudo systemctl tomcat09  status
+ 1089  sudo systemctl status tomcato09
+ 1090  sudo systemctl status tomcat09
+ 1091  sudo systemctl status tomcat9
+ 1092  sudo systemctl stop tomcat9
+ 1093  sudo systemctl status tomcat9
+ 1094  ls
+ 1095  cd ..
+ 1096  ls
+ 1097  cd ..
+ 1098  ls
+ 1099  cd snap
+ 1100  ls
+ 1101  cd ..
+ 1102  ls
+ 1103  cd etc/tomcat9/
+ 1104  ls
+ 1105  sudo nano web.xml
+ 1106  cd ..
+ 1107  ls
+ 1108  cd /usr/share/tomcat9/conf
+ 1109  ls
+ 1110  sudo nano tomcat-users.xml
+ 1111  sudo systemctl status tomcat9
+ 1112  sudo systemctl start tomcat9
+ 1113  sudo systemctl status tomcat9
+ 1114  sudo systemctl stop tomcat9
+ 1115  cd ..
+ 1116  sudo chmod -R +r /usr/share/tomcatX
+ 1117  sudo chmod -R +r /usr/share/tomcat9
+ 1118  sudo chmod -R +r /usr/share/tomcat9/conf
+ 1119  ls /usr/share/tomcat9/conf
+ 1120  ls -l /usr/share/tomcat9/conf
+ 1121  ls /usr/share/tomcat9/conf
+ 1122  ls -ln /usr/share/tomcat9/conf
+ 1123  ll /usr/share/tomcat9/conf
+ 1124  ls /usr/share/tomcat9/conf
+ 1125  ls -al /usr/share/tomcat9/conf
+ 1126  ls -l /var/lib/tomcat9/conf
+ 1127  ls -l /etc/tomcat9
+ 1128  sudo systemctl stop tomcat9
+ 1129  ls -l /etc/tomcat9
+ 1130  sudo chmod -777 -R etc/tomcat9
+ 1131  ls -l /etc/tomcat9
+ 1132  sudo ls -l /etc/tomcat9
+ 1133  sudo ln -s /var/lib/tomcatX/conf conf
+ 1134  ls -l
+ 1135  sudo chmod -R +r /usr/share/tomcat9
+ 1136  sudo chmod -R +r /usr/share/tomcat9/conf
+ 1137  sudo ls -l /etc/tomcat9
+ 1138  sudo chmod -R +rwx /usr/share/tomcat9/conf
+ 1139  sudo ls -l /etc/tomcat9
+ 1140  sudo chmod -o -R +rwx /usr/share/tomcat9/conf
+ 1141  sudo chmod -oR +rwx /usr/share/tomcat9/conf
+ 1142  sudo chmod -R 777 /usr/share/tomcat9/conf
+ 1143  ls -l
+ 1144  sudo ls -l /etc/tomcat9
+ 1145  curl 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TraversTT?api_key=RGAPI-1ed86c58-2eee-4e6c-85d4-3bead97e4d3b' -X OPTIONS -H 'Access-Control-Request-Method: GET' -H 'Origin: https://js-9vpefs.stackblitz.io' -H 'Referer: https://js-9vpefs.stackblitz.io/' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36' -H 'DNT: 1' -H 'Access-Control-Request-Headers: x-riot-token' --compressed
+ 1146  curl 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/PERMABANNED?api_key=RGAPI-02d0afda-d589-4776-9770-bf0d36808992' -X OPTIONS -H 'Access-Control-Request-Method: GET' -H 'Origin: https://js-9vpefs.stackblitz.io' -H 'Referer: https://js-9vpefs.stackblitz.io/' -H 'User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36' -H 'DNT: 1' -H 'Access-Control-Request-Headers: x-riot-token' --compressed
+ 1147  curl 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/PERMABANNED?api_key=RGAPI-02d0afda-d589-4776-9770-bf0d36808992' -X OPTIONS -H 'Access-Control-Request-Method: GET' -H 'Origin: https://js-9vpefs.stackblitz.io' -H 'Referer: https://js-9vpefs.stackblitz.io/' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36' -H 'DNT: 1' -H 'Access-Control-Request-Headers: x-riot-token' --compressed
+ 1148  sudo ./manager-linux-x64.run
+ 1149  sudo service tomcat9 status
+ 1150  sudo service tomcat9 sop
+ 1151  sudo service tomcat9 stop
+ 1152  sudo service tomcat9 status
+ 1153  sudo service tomcat9 stop
+ 1154  cd ..
+ 1155  ls
+ 1156  cd opt/lampp
+ 1157  ls
+ 1158  sudo ./manager-linux-x64.run
+ 1159  sudo service tomcat9 stop
+ 1160  cd ..
+ 1161  ls
+ 1162  cd opt/lampp
+ 1163  sudo ./manager-linux-x64.run
+ 1164  sudo service tomcat9 stop
+ 1165  cd ..
+ 1166  ls
+ 1167  cd opt/lamp
+ 1168  cd opt/lampp
+ 1169  sudo ./manager-linux-x64.run
+ 1170  sido ./manager-linux-x64.run
+ 1171  sudo ./manager-linux-x64.run
+ 1172  cd ..
+ 1173  sudo chmod 777 sacarTodos.csv
+ 1174  ls
+ 1175  cd conexion_API/
+ 1176  sudo chmod 777 sacarTodos.csv
+ 1177  sudo service tomcat9 stop
+ 1178  cd ..
+ 1179  ls
+ 1180  cd opt/lampp
+ 1181  sudo ./manager-linux-x64.tun
+ 1182  sudo ./manager-linux-x64.run
+ 1183  cd ..
+ 1184  ls
+ 1185  cd opt/lampp
+ 1186  sudo ./manager-linux-x64.run
+ 1187  ls
+ 1188  cd ..
+ 1189  ls
+ 1190  cd opt/lampp/
+ 1191  ls
+ 1192  cd htdocs
+ 1193  ls
+ 1194  cd webScraping_Geotiles
+ 1195  cd webScarping_Geotiles
+ 1196  ls
+ 1197  sudo chmod 777 geotiles.csv 
+ 1198  ls
+ 1199  sudo ./manager-linux-x64.run
+ 1200  ls
+ 1201  sudo chmod 777 -Rultimo_examen
+ 1202  sudo chmod 777 -R ultimo_examen
+ 1203  cd ultimo_examen/
+ 1204  ls -l
+ 1205  sudo ./webstorm.sh
+ 1206  ls
+ 1207  cd ..
+ 1208  ls
+ 1209  cd daniel
+ 1210  ls
+ 1211  cd Escritorio/
+ 1212  l
+ 1213  ls
+ 1214  cd Montessori/
+ 1215  ls
+ 1216  cd DWEC
+ 1217  ls
+ 1218  sudo chmod 777 -Rultimo_examen
+ 1219  sudo chmod 777 -R ultimo_examen
+ 1220  sudo ./manager-linux-x64.run
+ 1221  curl --location --request POST 'http://127.0.0.1:39661/api/a' --header 'Content-Type: application/json' --data-raw '{
+ 1222      "fecha": "10-03-2021",
+ 1223      "nombre": "fabi",
+ 1224      "apellido": "ferrero",
+ 1225      "correo": "fabichulo@gmail.com",
+ 1226      "telefono": "671766699"
+ 1227  }'
+ 1228  curl --location --request POST 'http://127.0.0.1:39661/api/a' --header 'Content-Type: application/json' --data-raw '{
+ 1229      "fecha": "10-03-2021",
+ 1230      "nombre": "angela",
+ 1231      "apellido": "ferrero",
+ 1232      "correo": "fabichulo@gmail.com",
+ 1233      "telefono": "123456789"
+ 1234  }'
+ 1235  curl --location --request GET 'http://127.0.0.1:39661/api/pets'
+ 1236  cd ..
+ 1237  ls
+ 1238  cd ..
+ 1239  ls
+ 1240  cd opt/lampp
+ 1241  ls
+ 1242  sudo ./manager-linux-x64.run
+ 1243  composer update
+ 1244  symfony server:start
+ 1245  composer require amphp/http-client
+ 1246  composer require knpuniversity/oauth2-client-bundle
+ 1247  composer require league/oauth2-google
+ 1248  yarn install --force
+ 1249  yarn encore dev --watch
+ 1250  symfony server:start
+ 1251  cd ..
+ 1252  curl --location --request GET 'http://127.0.0.1:8000/api/pets'
+ 1253  sudo ./manager.linux-x64.run
+ 1254  sudo ./manager-linux-x64.run
+ 1255  symfony new tfg -full
+ 1256  sudo ./manager-linux-x64.run
+ 1257  symfony server:start
+ 1258  php bin/console make:auth
+ 1259  symfony server:start
+ 1260  php bin/console make:registration-form
+ 1261  composer require symfonycasts/verify-email-bundle
+ 1262  php bin/console make:migration
+ 1263  php bin/console doctrine:migrations:migrate
+ 1264  symfony server:start
+ 1265  php bin/console make:registration-form
+ 1266  symfony server:start
+ 1267  git pull
+ 1268  git pull master
+ 1269  git pull main
+ 1270  git pull origin master
+ 1271  cd ..
+ 1272  git clone https://github.com/DanielGilBenedi/freeMarket.git
+ 1273  ls
+ 1274  cd freeMarket/
+ 1275  ls
+ 1276  git clone https://github.com/DanielGilBenedi/freeMarket.git origin master
+ 1277  ls -l
+ 1278  ls -a
+ 1279  nano .env
+ 1280  symfony new freeMarket --full
+ 1281  symfony server:start
+ 1282  php bin/console make:form
+ 1283  symfony server:start
+ 1284  php bin/console make:entity
+ 1285  php bin/console make:migration
+ 1286  php bin/console doctrine:migrations:migrate
+ 1287  symfony server:start
+ 1288  composer require knplabs/knp-paginator-bundle
+ 1289  symfony server:start
+ 1290  php bin/console make:entity OrderItem
+ 1291  php bin/console make:entity Order
+ 1292  php bin/console make:migration
+ 1293  symfony console doctrine:migrations:migrate
+ 1294  symfony console make:form AddToCartType OrderItem
+ 1295  symfony console make:form CartItemType OrderItem
+ 1296  symfony console make:form CartType Order
+ 1297  symfony console make:controller CartController
+ 1298  symfony server:start
+ 1299  git add .
+ 1300  git commit -m "carrito acabado"
+ 1301  git push
+ 1302  symfony console make:form ProductosModificarType Productos
+ 1303  symfony server:start
+ 1304  sudo ./manager-linux-x64.run
+ 1305  symfony console make:entity
+ 1306  php bin/console make:migration
+ 1307  php bin/console doctrine:migrations:migrate
+ 1308  symfony server:start
+ 1309  git add .
+ 1310  git commit -m "usuario pedido relacion"
+ 1311  git push
+ 1312  $ symfony composer req "admin:^3"
+ 1313  composer require easycorp/easyadmin-bundle
+ 1314  php bin/console make:admin:dashboard
+ 1315  symfony server:start
+ 1316  symfony console make:admin:crud
+ 1317  symfony server:start
+ 1318  symfony console make:admin:crud
+ 1319  symfony server:start
+ 1320  php bin/console fos:user:promote 1@1.com ROLE_ADMIN
+ 1321  symfony server:start
+ 1322  git add .
+ 1323  git commit -m "panel admin done"
+ 1324  git push
+ 1325  sudo manager-linux-x64.run
+ 1326  sudo ./manager-linux-x64.run
+ 1327  symfony server:start
+ 1328  git add .
+ 1329  git commit -m "userPanel"
+ 1330  git push
+ 1331  php bin/console doctrine:schema:update --dump-sql
+ 1332  php bin/console doctrine:schema:update --dump-sql --force
+ 1333  php bin/console make:migration
+ 1334  php bin/console doctrine:schema:update --dump-sql --force
+ 1335  symfony server:start
+ 1336  git add .
+ 1337  git commit -m "todo el panel del user"
+ 1338  git push
+ 1339  composer require knplabs/knp-snappy-bundle
+ 1340  symfony server:start
+ 1341  composer require royopa/fpdf-symfony4
+ 1342  composer require royopa/fpdf-symfony2
+ 1343  symfony server:start
+ 1344  composer require dompdf/dompdf
+ 1345  php --ini
+ 1346  composer require dompdf/dompdf
+ 1347  composer update
+ 1348  sudo ./manager-linux-x64.run
+ 1349  sudo nano php.ini 
+ 1350  sudo nano php.ini 
+ 1351  ipconfig
+ 1352  ifconfig
+ 1353  symfony cache:clear
+ 1354  symfony server:start
+ 1355  git add .
+ 1356  git commit -m "pasarela pago"
+ 1357  git push
+ 1358  symfony server:start
+ 1359  sudo ./manager-linux-x64.run
+ 1360  curl --location --request GET 'https://127.0.0.1:8000/get_products'
+ 1361  curl -X POST is "http://localhost:8000/checkout-session" -d ""
+ 1362  curl -X POST is "https://localhost:8000/checkout-session" -d ""
+ 1363  curl -X POST is "https://localhost:8000/checkout_session" -d ""
+ 1364  curl -X POST is "https://localhost:8000/checkout_session" 
+ 1365  sudo ./manager-liux-x64.run
+ 1366  sudo ./manager-linux-x64.run
+ 1367  git status
+ 1368  git add .
+ 1369  git commit -m "cart acabado"
+ 1370  git status
+ 1371  git checkout develop
+ 1372  git status
+ 1373  git pull
+ 1374  symfony server:start
+ 1375  composer install
+ 1376  symfony server:start
+ 1377  heroku create
+ 1378  heroku git:remote -a freemarketfct
+ 1379  heroku status
+ 1380  heroku config:set SYMFONY_ENV=prod
+ 1381  git push heroku master
+ 1382  echo 'web: heroku-php-apache2 public/' > Procfile
+ 1383  git add Procfile
+ 1384  git commit -m "Heroku Procfile"
+ 1385  git push heroku master
+ 1386  git Push heroku HEAD:master
+ 1387* git push 
+ 1388  git status
+ 1389  git add .
+ 1390  git commit -m "bundles to prod"
+ 1391  git push heroku HEAD:master
+ 1392  git add .
+ 1393  git commit -m "bundles to prod v2"
+ 1394  git push heroku HEAD:master
+ 1395  git push heroku HEAD:main
+ 1396  git push
+ 1397  git push heroku HEAD:master
+ 1398  git status
+ 1399  git status heroku
+ 1400  heroku status
+ 1401  git push heroku master:master
+ 1402  git push heroku main
+ 1403  git status
+ 1404  git add .
+ 1405  git commit -m "bundles to prod v2"
+ 1406  git push heroku HEAD:master
+ 1407  composer dump-env prod
+ 1408  APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
+ 1409  git status
+ 1410  git commit -m "bundles to prod v4"
+ 1411  git add .
+ 1412  git commit -m "bundles to prod v4"
+ 1413  git push heroku HEAD:master
+ 1414  composer install doctrine/doctrine-fixtures-bundle
+ 1415  composer require install doctrine/doctrine-fixtures-bundle
+ 1416  composer require doctrine/doctrine-fixtures-bundle
+ 1417  git status
+ 1418  git add .
+ 1419  git commit -m "fixtures bundle"
+ 1420  git push heroku HEAD:master
+ 1421  heroku runs composer install
+ 1422  symfony server:start
+ 1423  heroku config:set SYMFONY_ENV=prod
+ 1424  git push heroku HEAD:master
+ 1425  git status
+ 1426  composer recipes
+ 1427  git status
+ 1428  git add .
+ 1429  git commit -m "scripts stop"
+ 1430  git push heroku HEAD:master
+ 1431  git add .
+ 1432  git commit -m "prueba"
+ 1433  git push heroku HEAD:master
+ 1434  git status
+ 1435  git add .
+ 1436  git commit -m "env"
+ 1437  heroku config:set APP_ENV=dev
+ 1438  git push heroku HEAD:master
+ 1439  heroku config:set APP_ENV=prod
+ 1440  heroku logs --tail
+ 1441  rm -rf vendor && var/cache
+ 1442  php bin/console cache:clear --no-warmup --env=prod
+ 1443  php bin/console cache:clear
+ 1444  APP_ENV=dev  APP_DEBUG=0 php bin/console cache:clear
+ 1445  git add .
+ 1446  git commit -m "to prod"
+ 1447  heroku config:set APP_ENV=prod
+ 1448  git push heroku HEAD:master
+ 1449  composer require symfony/apache-pack
+ 1450  git add composer.json composer.lock symfony.lock public/.htaccess
+ 1451  git commit -m "apache-pack"
+ 1452  git push heroku HEAD:master
+ 1453  heroku config | grep CLEARDB_DATABASE_URL
+ 1454  heroku logs --tail
+ 1455  heroku config | grep CLEARDB_DATABASE_URL
+ 1456  heroku config:get CLEARDB_DATABASE_URL
+ 1457  git add .
+ 1458  git commit -m "mysql conn"
+ 1459  git push heroku HEAD:master
+ 1460  symfony server:start
+ 1461  git status
+ 1462  git add .
+ 1463  git commit -m "cambios v1"
+ 1464  git push heroku HEAD:master
+ 1465  git add .
+ 1466  git commit -m "cambios v2"
+ 1467  git push heroku HEAD:master
+ 1468  git add .
+ 1469  got commit -m "jquery problems"
+ 1470  git commit -m "jquery problems"
+ 1471  git push heroku HEAD:master
+ 1472  git add .
+ 1473  git commit -m "errors v1"
+ 1474  git push heroku HEAD:master
+ 1475  git add .
+ 1476  git commit -m "jquery not slim and minif"
+ 1477  git push heroku HEAD:master
+ 1478  history
+ 1479  history > comandos.txt

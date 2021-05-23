@@ -103,7 +103,7 @@ class CartManager
         if($order){
             foreach ($order->getItems() as $orders){
                 $product = $this->productoRepository->findOneBy(['id' => $orders->getProduct()->getId()]);
-                dump($product);
+            
                 $product->setStock($product->getStock()-$orders->getCantidad());
             }
         }
