@@ -47,7 +47,7 @@ class GeneratePdfController extends AbstractController
         $dompdf->stream("order-$idOrder.pdf", [
             "Attachment" => true
         ]);
-
+$this->redirectToRoute("principal");
     }
 
 }
