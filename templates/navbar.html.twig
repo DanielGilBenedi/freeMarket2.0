@@ -425,7 +425,7 @@
                    document.getElementById("myInput").parentNode.appendChild(a);
                    $.each(data, function(index, value) {
 
-                       if(value['nombre'].toUpperCase().includes(productos.toUpperCase())){
+                       if(value['nombre'].includes(productos)){
                            $(".autocomplete-items").css("height","200px");
                            if ($(".autocomplete-items").offsetHeight < $(".autocomplete-items").scrollHeight
                                ) {
