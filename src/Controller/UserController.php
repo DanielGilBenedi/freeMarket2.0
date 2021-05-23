@@ -97,33 +97,7 @@ class UserController extends AbstractController
         return $this->redirectToRoute('user_index');
     }
 
-    /**
-     * @Route("generar_pdf/{id}", name="generar_pdf", methods={"POST","GET"})
-     * @param Pdf $pdf
-     */
-    public function generarPdf(Pdf $pdf, Request $request){
-        $idOrder = $request->get('id');
-        $order = $this->getDoctrine()
-            ->getRepository(OrderItem::class)
-            ->findBy(['orderRef'=> $idOrder]);
-        $total = 0;
-        foreach ($order as $orTot){
-            $total+= $orTot->getTotal();
-        }
-        $html = $this->renderView("OrderPdf.html.twig", $data = [
-            'order' => $order,
-            'total' => $total
-        ]);
 
-        $filename = "pedido$idOrder.pdf";
-        return new PdfResponse(
-            $pdf->getOutputFromHtml($html),
-            $filename,
-            $this->redirectToRoute('user_index')
-        );
-
-
-    }
 
 
 }
