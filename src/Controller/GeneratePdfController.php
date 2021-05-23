@@ -48,7 +48,6 @@ class GeneratePdfController extends AbstractController
             "Attachment" => true
         ]);
 
-        return $this->render('productos/edit.html.twig');
     }
 
 }
