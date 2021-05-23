@@ -26,11 +26,17 @@ class GeneratePdfController extends AbstractController
         foreach ($order as $orTot){
             $total+= $orTot->getTotal();
         }
-        return $this->render("OrderPdf.html.twig", $data = [
+        $html = $this->render("OrderPdf.html.twig", $data = [
             'order' => $order,
             'total' => $total
         ]);
 
+        $filename = "pedido$idOrder.pdf";
+        return new PdfResponse(
+            $pdf->getOutputFromHtml($html),
+            $filename,
+            $this->redirectToRoute('user_index')
+        );
 
 
     }
