@@ -48,7 +48,7 @@ class StripeController extends AbstractController
         $img = $this->cartSessionStorage->getCart()->getItems();
         $imagen = array();
         foreach ($img as $image){
-          array_push($imagen,$image->getProduct()->getImagen());
+            array_push($imagen,$image->getProduct()->getImagen());
         }
         $a = $total*100;
 
