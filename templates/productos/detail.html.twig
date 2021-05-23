@@ -52,13 +52,13 @@
 
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $('form[name="add_to_cart"]').submit(function() {
         setTimeout(function(){
             Swal.fire("Producto añadido!", "Puedes seguir comprando o ir al carrito a finalizar la compra!", "success");
             return false;
-        }, 1500);
+        }, 3000);
 
     });
 </script>
