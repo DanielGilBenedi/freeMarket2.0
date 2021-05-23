@@ -50,16 +50,9 @@ class GeneratePdfController extends AbstractController
         // Renderiza el HTML como PDF
         $dompdf->render();
 
-        // Almacenar datos binarios PDF
-        $output = $dompdf->output();
-
-        // En este caso, queremos escribir el archivo en el directorio público.
-        $publicDirectory = $this->get('kernel')->getProjectDir() . '/public';
-        // e.g /var/www/project/public/mypdf.pdf
-        $pdfFilepath =  $publicDirectory . '/mypdf.pdf';
-
-        // Escriba el archivo en la ruta deseada
-        file_put_contents($pdfFilepath, $output);
+        $dompdf->stream("mypdf.pdf", [
+            "Attachment" => true
+        ]);
 
         // Envía una respuesta de texto
         return new Response("¡El archivo PDF se ha generado correctamente!");
