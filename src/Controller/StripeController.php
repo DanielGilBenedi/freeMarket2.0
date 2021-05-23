@@ -51,7 +51,7 @@ class StripeController extends AbstractController
           array_push($imagen,$image->getProduct()->getImagen());
         }
         $a = $total*100;
-        Stripe::setMaxNetworkRetries(2);
+
         Stripe::setApiKey('sk_test_51Ik3C3C3IOqzxw5IitUoHr0wHKmpPRpmiUI61KcGhq4UHhNtOqfkkz5oUsG0WsA4ioDFEwl84I5CFzuBYD9rlypX00kcIediJy');
 
 
