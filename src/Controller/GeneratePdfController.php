@@ -50,7 +50,7 @@ class GeneratePdfController extends AbstractController
         // Renderiza el HTML como PDF
         $dompdf->render();
 
-        $dompdf->stream("mypdf.pdf", [
+        $dompdf->stream("order-$idOrder.pdf", [
             "Attachment" => true
         ]);
 
