@@ -32,9 +32,7 @@ class GeneratePdfController extends AbstractController
 
         $dompdf = new Dompdf($options);
 
-        $data = array(
-            'headline' => 'my headline'
-        );
+
         $html = $this->renderView("OrderPdf.html.twig", $data = [
             'order' => $order,
             'total' => $total
@@ -47,7 +45,7 @@ class GeneratePdfController extends AbstractController
         $dompdf->stream("order-$idOrder.pdf", [
             "Attachment" => true
         ]);
-$this->redirectToRoute("principal");
+        return $this->render('productos/edit.html.twig');
     }
 
 }
