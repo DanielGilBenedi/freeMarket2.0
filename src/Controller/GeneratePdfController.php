@@ -17,7 +17,7 @@ class GeneratePdfController extends AbstractController
      * @Route("generar_pdf/{id}", name="generar_pdf", methods={"POST","GET"})
 
      */
-    public function generarPdf(Pdf $pdf, Request $request){
+    public function generarPdf(Request $request){
         $idOrder = $request->get('id');
         $order = $this->getDoctrine()
             ->getRepository(OrderItem::class)
@@ -48,7 +48,7 @@ class GeneratePdfController extends AbstractController
             "Attachment" => true
         ]);
 
-
+        return $this->render('productos/edit.html.twig');
     }
 
 }
