@@ -82,7 +82,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
 
             if($mail === $credentials['email']){
                 $id =$oneUs->getId();
-                dump($id);
+
 
 
             }

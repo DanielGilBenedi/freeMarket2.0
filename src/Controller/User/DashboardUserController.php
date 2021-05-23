@@ -64,7 +64,7 @@ class DashboardUserController extends AbstractController
         $user = $this->entityManager->getRepository(User::class)->findBy([
             'id' =>$idUser]);
 
-        dump($user);
+
 
         $id = $user[0]->getId();
 
@@ -113,7 +113,7 @@ class DashboardUserController extends AbstractController
         $order = $this->getDoctrine()
             ->getRepository(OrderItem::class)
             ->findBy(['orderRef'=> $idOrder]);
-    dump($order);
+
     $total = 0;
         foreach ($order as $orTot){
             $total+= $orTot->getTotal();

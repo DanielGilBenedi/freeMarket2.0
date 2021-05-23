@@ -28,7 +28,7 @@ class SearchController extends AbstractController
 
    $response = new JsonResponse();
    $response->setData($datos);
-   dump($response);
+
 
    return $response;
    }

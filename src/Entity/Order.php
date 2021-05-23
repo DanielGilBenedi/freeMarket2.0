@@ -108,10 +108,10 @@ class Order
     public function removeItem(OrderItem $item): self
     {
         if ($this->items->removeElement($item)) {
-            dump($this->items);
+
             // set the owning side to null (unless already changed)
             if ($item->getOrderRef() === $this) {
-                dump($item->getOrderRef());
+
                 $item->setOrderRef(null);
             }
         }

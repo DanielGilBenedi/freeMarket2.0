@@ -104,7 +104,7 @@ class ImportCSVController extends AbstractController
 
                 $fileSystem = new Filesystem();
                 $fileSystem->remove($destination.'/'.$originalFilename);
-                dump($array);
+
             }
 
         }
