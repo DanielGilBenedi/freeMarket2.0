@@ -101,6 +101,7 @@
             // created in step 3.
             fetch('/checkout_session', {
                 method: 'POST',
+                credentials: 'same-origin'
             })
                 .then(function(response) {
                     return response.json();
