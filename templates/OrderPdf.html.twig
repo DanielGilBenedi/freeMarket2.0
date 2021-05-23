@@ -15,7 +15,6 @@
             <th>Cantidad</th>
             <th>Producto</th>
             <th>Precio</th>
-            <th>Imagen</th>
             <th>Total Unitario</th>
 
         </tr>
@@ -27,7 +26,6 @@
 
                 <td>{{ orders.product.nombre }}</td>
                 <td>{{ orders.product.precio }} €</td>
-                <td><img src="{{ orders.product.imagen }}"></td>
                 <td>{{ orders.getTotal() }} €</td>
 
             </tr>
