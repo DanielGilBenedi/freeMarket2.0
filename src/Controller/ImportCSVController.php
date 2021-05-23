@@ -91,7 +91,6 @@ class ImportCSVController extends AbstractController
                         $entityManager->flush();
                         $entityManager->clear();
 
-                        dump($producto);
                     }
 
                 }
