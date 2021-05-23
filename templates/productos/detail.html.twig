@@ -52,14 +52,13 @@
 
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    $('form[name="add_to_cart"]').submit(function() {
-        setTimeout(function(){
-            Swal.fire("Producto añadido!", "Puedes seguir comprando o ir al carrito a finalizar la compra!", "success");
-            return false;
-        }, 3000);
-
+    swal({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success",
+        button: "Aww yiss!",
     });
 </script>
 
