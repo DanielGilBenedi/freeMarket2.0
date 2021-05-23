@@ -5,10 +5,12 @@ namespace App\Controller;
 
 
 use App\Entity\OrderItem;
-
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Sasedev\MpdfBundle\Factory\MpdfFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class GeneratePdfController extends AbstractController
@@ -26,22 +28,43 @@ class GeneratePdfController extends AbstractController
         foreach ($order as $orTot){
             $total+= $orTot->getTotal();
         }
+        // Configure Dompdf según sus necesidades
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
 
+        // Crea una instancia de Dompdf con nuestras opciones
+        $dompdf = new Dompdf($pdfOptions);
 
-        $mPdf = $MpdfFactory->createMpdfObject([
-            'mode' => 'utf-8',
-            'format' => 'A4',
-            'margin_header' => 5,
-            'margin_footer' => 5,
-            'orientation' => 'P'
-        ]);
-        $mPdf->SetTopMargin("50");
-
-        $mPdf->WriteHTML($this->renderView("OrderPdf.html.twig", $data = [
+        // Recupere el HTML generado en nuestro archivo twig
+        $html = $this->renderView("OrderPdf.html.twig", $data = [
             'order' => $order,
             'total' => $total
-        ]));
-        return $MpdfFactory->createDownloadResponse($mPdf, "file.pdf");
+        ]);
+
+        //Cargar HTML en Dompdf
+        $dompdf->loadHtml($html);
+
+        // (Opcional) Configure el tamaño del papel y la orientación 'vertical' o 'vertical'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Renderiza el HTML como PDF
+        $dompdf->render();
+
+        // Almacenar datos binarios PDF
+        $output = $dompdf->output();
+
+        // En este caso, queremos escribir el archivo en el directorio público.
+        $publicDirectory = $this->get('kernel')->getProjectDir() . '/public';
+        // e.g /var/www/project/public/mypdf.pdf
+        $pdfFilepath =  $publicDirectory . '/mypdf.pdf';
+
+        // Escriba el archivo en la ruta deseada
+        file_put_contents($pdfFilepath, $output);
+
+        // Envía una respuesta de texto
+        return new Response("¡El archivo PDF se ha generado correctamente!");
+
+
     }
 
 }
