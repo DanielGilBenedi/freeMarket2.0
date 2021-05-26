@@ -144,11 +144,13 @@
             </tr>
 
             <tr class="item">
+                {% for orders in order %}
                 <td>{{ orders.cantidad }}</td>
 
                 <td>{{ orders.product.nombre }}</td>
                 <td>{{ orders.product.precio }} €</td>
                 <td>{{ orders.getTotal() }} €</td>
+                {% else %}
             </tr>
 
             <tr class="total">
