@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Order;
 use App\Entity\OrderItem;
 use Dompdf\Dompdf;
 use Dompdf\Options;
@@ -24,9 +25,14 @@ class GeneratePdfController extends AbstractController
         $order = $this->getDoctrine()
             ->getRepository(OrderItem::class)
             ->findBy(['orderRef'=> $idOrder]);
+        $or = $this->getDoctrine()
+            ->getRepository(Order::class)
+            ->findBy(['id'=> $idOrder]);
         $total = 0;
+
         foreach ($order as $orTot){
             $total+= $orTot->getTotal();
+
         }
         // Configure Dompdf según sus necesidades
         $pdfOptions = new Options();
@@ -38,7 +44,9 @@ class GeneratePdfController extends AbstractController
         // Recupere el HTML generado en nuestro archivo twig
         $html = $this->renderView("OrderPdf.html.twig", $data = [
             'order' => $order,
-            'total' => $total
+            'total' => $total,
+            'idPedido' => $idOrder,
+            'pedido' => $or
         ]);
 
         //Cargar HTML en Dompdf
