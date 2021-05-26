@@ -30,11 +30,10 @@ class GeneratePdfController extends AbstractController
             ->getRepository(Order::class)
             ->findBy(['id'=> $idOrder]);
 
-        dump($or[0]->getIdCliente());
 
         $user = $this->getDoctrine()
             ->getRepository(User::class)
-            ->findBy(['id'=> $or[0]['id_cliente']]);
+            ->findBy(['id'=> $or[0]->getIdCliente()]);
 
         $total = 0;
 
