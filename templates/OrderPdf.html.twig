@@ -142,17 +142,17 @@
                 <td>Precio</td>
                 <td>Total Unitario</td>
             </tr>
-
+            {% for orders in order %}
             <tr class="item">
-                {% for orders in order %}
+
                 <td>{{ orders.cantidad }}</td>
 
                 <td>{{ orders.product.nombre }}</td>
                 <td>{{ orders.product.precio }} €</td>
                 <td>{{ orders.getTotal() }} €</td>
-                {% endfor %}
-            </tr>
 
+            </tr>
+            {% endfor %}
             <tr class="total">
                 <td></td>
 
