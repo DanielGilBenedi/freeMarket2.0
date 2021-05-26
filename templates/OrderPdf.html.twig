@@ -103,9 +103,7 @@
                 <td colspan="2">
                     <table>
                         <tr>
-                            <td class="title">
-                                <img src="https://www.sparksuite.com/images/logo.png" style="width: 100%; max-width: 300px" />
-                            </td>
+
 
                             <td>
                                 Invoice #: 123<br />
@@ -138,45 +136,25 @@
             </tr>
 
             <tr class="heading">
-                <td>Payment Method</td>
 
-                <td>Check #</td>
-            </tr>
-
-            <tr class="details">
-                <td>Check</td>
-
-                <td>1000</td>
-            </tr>
-
-            <tr class="heading">
-                <td>Item</td>
-
-                <td>Price</td>
+                <td>Cantidad</td>
+                <td>Producto</td>
+                <td>Precio</td>
+                <td>Total Unitario</td>
             </tr>
 
             <tr class="item">
-                <td>Website design</td>
+                <td>{{ orders.cantidad }}</td>
 
-                <td>$300.00</td>
-            </tr>
-
-            <tr class="item">
-                <td>Hosting (3 months)</td>
-
-                <td>$75.00</td>
-            </tr>
-
-            <tr class="item last">
-                <td>Domain name (1 year)</td>
-
-                <td>$10.00</td>
+                <td>{{ orders.product.nombre }}</td>
+                <td>{{ orders.product.precio }} €</td>
+                <td>{{ orders.getTotal() }} €</td>
             </tr>
 
             <tr class="total">
                 <td></td>
 
-                <td>Total: $385.00</td>
+                <td>Total: {{ total }} €</td>
             </tr>
         </table>
     </div>
