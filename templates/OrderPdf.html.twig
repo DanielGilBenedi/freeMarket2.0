@@ -1,6 +1,4 @@
 
-{% block title %}<h1>Detalles del pedido</h1>{% endblock %}
-
 {% block body %}
     <style>
 
@@ -67,6 +65,10 @@
 				border-top: 2px solid #eee;
 				font-weight: bold;
 			}
+            .total{
+                margin-top: 50px;
+                margin-left:100px;
+            }
 
 			@media only screen and (max-width: 600px) {
 				.invoice-box table tr.top table td {
@@ -139,8 +141,9 @@
 
                 <td>Cantidad</td>
                 <td>Producto</td>
-                <td>Precio</td>
                 <td>Total Unitario</td>
+                <td>Precio</td>
+
             </tr>
             {% for orders in order %}
             <tr class="item">
