@@ -29,7 +29,7 @@ class GeneratePdfController extends AbstractController
             ->getRepository(Order::class)
             ->findBy(['id'=> $idOrder]);
         $total = 0;
-
+        dump($or);
         foreach ($order as $orTot){
             $total+= $orTot->getTotal();
 
