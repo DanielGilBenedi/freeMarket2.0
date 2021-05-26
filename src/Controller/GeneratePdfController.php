@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Order;
 use App\Entity\OrderItem;
+use App\Entity\User;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Sasedev\MpdfBundle\Factory\MpdfFactory;
@@ -28,6 +29,10 @@ class GeneratePdfController extends AbstractController
         $or = $this->getDoctrine()
             ->getRepository(Order::class)
             ->findBy(['id'=> $idOrder]);
+
+        $user = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->findBy(['id'=> $or['id_cliente']]);
         $total = 0;
         dump($or);
         foreach ($order as $orTot){
@@ -46,7 +51,8 @@ class GeneratePdfController extends AbstractController
             'order' => $order,
             'total' => $total,
             'idPedido' => $idOrder,
-            'pedido' => $or
+            'pedido' => $or,
+            'user' => $user
         ]);
 
         //Cargar HTML en Dompdf

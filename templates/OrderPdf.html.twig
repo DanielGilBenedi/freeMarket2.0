@@ -110,7 +110,7 @@
 
                             <td>
                                 Pedido #: {{ idPedido }}<br />
-                                Creado: {{ pedido.id }}<br />
+                                Creado: {{ pedido.createdAt|date }}<br />
                             </td>
                         </tr>
                     </table>
@@ -122,15 +122,18 @@
                     <table>
                         <tr>
                             <td>
-                                Sparksuite, Inc.<br />
-                                12345 Sunny Road<br />
-                                Sunnyville, CA 12345
+								<p>Dirección</p>
+								{{ user.provincia }}<br />
+								{{ user.ciudad }}<br />
+								{{ user.direccion }}
                             </td>
 
                             <td>
-                                Acme Corp.<br />
-                                John Doe<br />
-                                john@example.com
+								Empresa: {{ user.empresa }}<br />
+								Email: {{ user.email }}<br />
+								Nombre: {{ user.nombre }}<br />
+								Teléfono: {{ user.telefono }}<br />
+								Código cliente: {{ user.cod_cliente }}
                             </td>
                         </tr>
                     </table>
