@@ -34,7 +34,7 @@ class GeneratePdfController extends AbstractController
         $user = $this->getDoctrine()
             ->getRepository(User::class)
             ->findBy(['id'=> $or[0]->getIdCliente()]);
-        dump($user);
+
         $total = 0;
 
         foreach ($order as $orTot){
@@ -54,7 +54,7 @@ class GeneratePdfController extends AbstractController
             'total' => $total,
             'idPedido' => $idOrder,
             'pedido' => $or,
-            'user' => $user
+            'user' => $user[0]
         ]);
 
         //Cargar HTML en Dompdf
