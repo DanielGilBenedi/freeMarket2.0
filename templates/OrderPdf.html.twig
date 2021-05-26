@@ -150,7 +150,7 @@
                 <td>{{ orders.product.nombre }}</td>
                 <td>{{ orders.product.precio }} €</td>
                 <td>{{ orders.getTotal() }} €</td>
-                {% else %}
+                {% endfor %}
             </tr>
 
             <tr class="total">
