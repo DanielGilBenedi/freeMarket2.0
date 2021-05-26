@@ -40,7 +40,7 @@ class GeneratePdfController extends AbstractController
             'order' => $order,
             'total' => $total
         ]);
-
+        $html .= '<link type="text/css" href="../../public/assets/css/order-pdf.css" rel="stylesheet" />';
         //Cargar HTML en Dompdf
         $dompdf->loadHtml($html);
 
