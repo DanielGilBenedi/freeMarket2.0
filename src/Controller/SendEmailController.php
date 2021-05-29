@@ -39,7 +39,7 @@ class SendEmailController extends AbstractController
                 //->bcc('bcc@example.com')
                 //->replyTo('fabien@example.com')
                 ->priority(Email::PRIORITY_HIGH)
-                ->subject('Bienvenido'.$userName)
+                ->subject('Bienvenido '.$userName)
                 ->text('Usuario '.$userEmail.' contraseña '.$userPass)
                 ->html('<p>Queremos darte la bienvenida a FreeMarket, Estos son tus datos de acceso:</p><p>Usuario</p>'.$userEmail.'<p>Contraseña</p>'.$userPass);
 
