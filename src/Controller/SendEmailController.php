@@ -41,7 +41,7 @@ class SendEmailController extends AbstractController
                 ->priority(Email::PRIORITY_HIGH)
                 ->subject('Bienvenido '.$userName)
                 ->text('Usuario '.$userEmail.' contraseña '.$userPass)
-                ->html('<p>Queremos darte la bienvenida a FreeMarket, Estos son tus datos de acceso:</p><p>Usuario</p>'.$userEmail.'<p>Contraseña</p>'.$userPass);
+                ->html('<p>Queremos darte la bienvenida a FreeMarket, Estos son tus datos de acceso:</p><p>Usuario</p>'.$userEmail.'<p>Contraseña</p>'.$userPass.'<p>Entra aquí para acceder a tu cuenta</p><a href="https://freemarketfct.herokuapp.com/login">Entrar</a>');
 
             $mailer->send($email);
             $response = new RedirectResponse('/admin');
