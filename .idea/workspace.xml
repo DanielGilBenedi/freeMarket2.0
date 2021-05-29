@@ -14,8 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96d0ea1-b2f2-4831-a4a8-28fda0dca306" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SendEmailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SendEmailController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +235,7 @@
       <workItem from="1621440616563" duration="12229000" />
       <workItem from="1621533037470" duration="18519000" />
       <workItem from="1621758833189" duration="35155000" />
-      <workItem from="1622284443971" duration="1916000" />
+      <workItem from="1622284443971" duration="2088000" />
     </task>
     <servers />
   </component>

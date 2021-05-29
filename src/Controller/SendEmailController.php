@@ -27,7 +27,7 @@ class SendEmailController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form['Clientes']->getData();
             $userPass = $form['Password']->getData();
-
+            $userName = $user->getNombre();
 
         $userEmail = $user->getEmail();
 
@@ -39,7 +39,7 @@ class SendEmailController extends AbstractController
                 //->bcc('bcc@example.com')
                 //->replyTo('fabien@example.com')
                 ->priority(Email::PRIORITY_HIGH)
-                ->subject('Time for Symfony Mailer!')
+                ->subject('Bienvenido'.$userName)
                 ->text('Usuario '.$userEmail.' contraseña '.$userPass)
                 ->html('<p>Queremos darte la bienvenida a FreeMarket, Estos son tus datos de acceso:</p><p>Usuario</p>'.$userEmail.'<p>Contraseña</p>'.$userPass);
 
