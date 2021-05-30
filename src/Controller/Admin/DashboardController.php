@@ -51,7 +51,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Categorias', 'fas fa-copyright', Categorias::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
         yield MenuItem::linkToRoute('Importar', 'fas fa-file-upload','carga_masiva');
-
+        yield MenuItem::linkToRoute('Correos', 'fas fa-envelope-open-text','correo');
 
     }
 }

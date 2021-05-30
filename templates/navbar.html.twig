@@ -486,10 +486,10 @@
                var id = $(this).attr('id');
                if(id != null){
                    var url = window.location.href;
-                   console.log(url);
+                   
 
-                   var urltotal = url.substr(0,url.indexOf('/'))
-                   window.location.href = urltotal +"productos/"+"view"+"/"+id;
+                    var urltotal = url.split('/')
+                   window.location.href = "https://"+urltotal[2]+"/productos/view/"+id;
                }
 
            });

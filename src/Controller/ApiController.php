@@ -10,11 +10,12 @@ use App\Repository\ProductosRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/api")
  */
-class ApiController
+class ApiController extends AbstractController
 {
 
     private $productosRepository;
@@ -78,6 +79,25 @@ class ApiController
             'stock' => $products->getStock(),
         ];
         return new JsonResponse($data, Response::HTTP_OK);
+    }
+
+    /**
+     *
+     * @Route ("/buy_products/{id}/{qty}", name="buy_products", methods={"GET"})
+     */
+    public function updateProduct($id, $qty)
+    {
+        $products = $this->productosRepository->findOneBy(['id' => $id]);
+        if($products->getStock() < $qty){
+            return new JsonResponse('no se ha podido crear', Response::HTTP_NON_AUTHORITATIVE_INFORMATION);
+        }
+        $products->setStock($products->getStock()-$qty);
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $entityManager->persist($products);
+        $entityManager->flush();
+
+        return new JsonResponse('productos comprado', Response::HTTP_OK);
     }
 
     /**
