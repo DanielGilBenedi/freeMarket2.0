@@ -27,7 +27,6 @@ class ProductosCrudController extends AbstractCrudController
             NumberField::new('stock'),
             NumberField::new('precio'),
             NumberField::new('peso'),
-
         ];
     }
 
